@@ -199,3 +199,2309 @@ livekit.agents.utils.aio.duplex_unix.DuplexClosed
                                                        "ws://localhost:7880",  
                                                        "region": "",           
                                                        "protocol": 16}         
+    00:07:51 INFO   livekit.agents   received job request {"job_id":           
+                                                          "AJ_ZPsdzP8MueKc",   
+                                                          "dispatch_id":       
+                                                          "AD_MksjGKjr8pPA",   
+                                                          "room":              
+                                                          "voice_assistant_roo…
+                                                          "room_id":           
+                                                          "RM_3hik4GhnyxXH",   
+                                                          "agent_name": "",    
+                                                          "resuming": false,   
+                                                          "enable_recording":  
+                                                          false}               
+             DEBUG  livekit.agents   received assignment {"agent_name": "",    
+                                                         "room_id":            
+                                                         "RM_3hik4GhnyxXH",    
+                                                         "room":               
+                                                         "voice_assistant_room…
+                                                         "job_id":             
+                                                         "AJ_ZPsdzP8MueKc",    
+                                                         "dispatch_id":        
+                                                         "AD_MksjGKjr8pPA",    
+                                                         "enable_recording":   
+                                                         false}                
+             INFO   livekit.agents   initializing job runner {"tid": 30176}
+    00:07:52 DEBUG  asyncio          Using proactor: IocpProactor  
+             INFO   livekit.agents   job runner           {"tid": 30176,       
+                                     initialized          "elapsed_time": 0.49}
+    00:07:56 WARNI… livekit.agents   RoomInputOptions and {"room":             
+                                     RoomOutputOptions    "voice_assistant_roo…
+                                     are deprecated, use                       
+                                     RoomOptions instead                       
+             DEBUG  livekit.agents   input stream         {"room":             
+                                     attached             "voice_assistant_roo…
+                                                          "participant": null, 
+                                                          "source":            
+                                                          "SOURCE_UNKNOWN",    
+                                                          "accepted_sources":  
+                                                          ["SOURCE_MICROPHONE"…
+             DEBUG  livekit.agents   http_session():      {"room":             
+                                     creating a new       "voice_assistant_roo…
+                                     httpclient ctx                            
+error: failed to fetch server settings: http status: 404
+             DEBUG  livekit.agents   using audio io:      {"room":             
+                                     `RoomIO` ->          "voice_assistant_roo…
+                                     `AgentSession` ->                         
+                                     `TranscriptSynchroni                      
+                                     zer` -> `RoomIO`                          
+             DEBUG  livekit.agents   using transcript io: {"room":             
+                                     `AgentSession` ->    "voice_assistant_roo…
+                                     `TranscriptSynchroni                      
+                                     zer` -> `RoomIO`                          
+             ERROR  livekit          livekit_ffi::server::room:149:livekit_ff  
+                                     i::server::room - audio filter cannot be  
+                                     enabled: LiveKit Cloud is required        
+not authenticated
+             DEBUG  livekit.agents   start reading stream {"room":             
+                                                          "voice_assistant_roo…
+                                                          "participant":       
+                                                          "voice_assistant_use…
+                                                          "source":            
+                                                          "SOURCE_MICROPHONE"} 
+             ERROR  livekit          livekit_ffi::server::audio_stream:123:li  
+                                     vekit_ffi::server::audio_stream - failed  
+                                     to initialize the audio filter. it will   
+                                     not be enabled for this session.          
+    00:07:57 DEBUG  livekit.plugins… Established new      {"room":             
+                                     Deepgram STT         "voice_assistant_roo…
+                                     WebSocket            "headers":           
+                                     connection:          {"dg-project-id":    
+                                                          "3c4e9180-658f-4f83-…
+                                                          "dg-request-id":     
+                                                          "ec7ec0ef-f87e-4225-…
+                                                          "Date": "Fri, 21 Nov 
+                                                          2025 18:37:56 GMT"}} 
+    00:07:58 DEBUG  livekit.agents   received user        {"room":             
+                                     transcript           "voice_assistant_roo…
+                                                          "user_transcript":   
+                                                          "Yeah.", "language": 
+                                                          "en-US",             
+                                                          "transcript_delay":  
+                                                          1.3596322536468506}  
+             INFO   google_genai.mo… AFC is enabled with  {"room":             
+                                     max remote calls:    "voice_assistant_roo…
+                                     10.                                       
+             DEBUG  livekit.plugins… eou prediction {"room":                   
+                                                    "voice_assistant_room_7181…
+                                                    "eou_probability":         
+                                                    0.05443373695015907,       
+                                                    "duration": 0.353, "input":
+                                                    "<|im_start|>user\nyeah"}  
+             DEBUG  livekit.agents   using preemptive     {"room":             
+                                     generation           "voice_assistant_roo…
+                                                          "preemptive_lead_tim…
+                                                          0.40793657302856445} 
+             INFO   livekit.agents   EOU metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "multilingual", 
+                                                 "model_provider": "livekit",  
+                                                 "end_of_utterance_delay":     
+                                                 1.77, "transcription_delay":  
+                                                 1.37}                         
+    00:08:00 INFO   livekit.agents   LLM metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name":                 
+                                                 "gemini-2.5-flash",           
+                                                 "model_provider": "Gemini",   
+                                                 "ttft": 2.73, "prompt_tokens":
+                                                 90, "prompt_cached_tokens": 0,
+                                                 "completion_tokens": 8,       
+                                                 "tokens_per_second": 2.91}    
+    00:08:01 DEBUG  livekit.agents   sent text to tts {"room":                 
+                                                      "voice_assistant_room_71…
+                                                      "text": "Yes what can I  
+                                                      help you with today",    
+                                                      "remaining_audio": 0.0}  
+             INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 4.7}        
+    00:08:03 INFO   livekit.agents   TTS metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "FALCON",       
+                                                 "model_provider": "Murf",     
+                                                 "ttfb": 0.7387364000314847,   
+                                                 "audio_duration": 2.72}       
+    00:08:06 INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 5.05}       
+    00:08:09 DEBUG  livekit.agents   received user        {"room":             
+                                     transcript           "voice_assistant_roo…
+                                                          "user_transcript":   
+                                                          "How are you?",      
+                                                          "language": "en-US", 
+                                                          "transcript_delay":  
+                                                          1.4569730758666992}  
+             INFO   google_genai.mo… AFC is enabled with  {"room":             
+                                     max remote calls:    "voice_assistant_roo…
+                                     10.                                       
+             DEBUG  livekit.plugins… eou prediction {"room":                   
+                                                    "voice_assistant_room_7181…
+                                                    "eou_probability":         
+                                                    0.19056715071201324,       
+                                                    "duration": 0.103, "input":
+                                                    "<|im_start|>user\nyeah<|i…
+                                                    what can i help you with   
+                                                    today<|im_end|>\n<|im_star…
+                                                    are you"}                  
+             DEBUG  livekit.agents   using preemptive     {"room":             
+                                     generation           "voice_assistant_roo…
+                                                          "preemptive_lead_tim…
+                                                          0.11999869346618652} 
+             INFO   livekit.agents   EOU metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "multilingual", 
+                                                 "model_provider": "livekit",  
+                                                 "end_of_utterance_delay":     
+                                                 1.58, "transcription_delay":  
+                                                 1.46}                         
+    00:08:10 INFO   livekit.agents   LLM metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name":                 
+                                                 "gemini-2.5-flash",           
+                                                 "model_provider": "Gemini",   
+                                                 "ttft": 1.23, "prompt_tokens":
+                                                 104, "prompt_cached_tokens":  
+                                                 0, "completion_tokens": 12,   
+                                                 "tokens_per_second": 9.71}    
+             DEBUG  livekit.agents   sent text to tts {"room":                 
+                                                      "voice_assistant_room_71…
+                                                      "text": "I am doing great
+                                                      and ready to assist you  
+                                                      How about you",          
+                                                      "remaining_audio": 0.0}  
+    00:08:11 INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 5.05}       
+    00:08:12 INFO   livekit.agents   TTS metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "FALCON",       
+                                                 "model_provider": "Murf",     
+                                                 "ttfb": 0.36534219997702166,  
+                                                 "audio_duration": 3.04}       
+    00:08:16 INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 5.05}       
+    00:08:18 DEBUG  livekit.agents   received user        {"room":             
+                                     transcript           "voice_assistant_roo…
+                                                          "user_transcript":   
+                                                          "So", "language":    
+                                                          "en-US",             
+                                                          "transcript_delay":  
+                                                          0.8914673328399658}  
+             INFO   google_genai.mo… AFC is enabled with  {"room":             
+                                     max remote calls:    "voice_assistant_roo…
+                                     10.                                       
+             DEBUG  livekit.plugins… eou prediction {"room":                   
+                                                    "voice_assistant_room_7181…
+                                                    "eou_probability":         
+                                                    0.003646816359832883,      
+                                                    "duration": 0.154, "input":
+                                                    "<|im_start|>user\nyeah<|i…
+                                                    what can i help you with   
+                                                    today<|im_end|>\n<|im_star…
+                                                    are                        
+                                                    you<|im_end|>\n<|im_start|…
+                                                    am doing great and ready to
+                                                    assist you how about       
+                                                    you<|im_end|>\n<|im_start|…
+    00:08:19 INFO   livekit.agents   LLM metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name":                 
+                                                 "gemini-2.5-flash",           
+                                                 "model_provider": "Gemini",   
+                                                 "ttft": 1.32, "prompt_tokens":
+                                                 119, "prompt_cached_tokens":  
+                                                 0, "completion_tokens": 4,    
+                                                 "tokens_per_second": 3.04}    
+             DEBUG  livekit.agents   sent text to tts {"room":                 
+                                                      "voice_assistant_room_71…
+                                                      "text": "So you were     
+                                                      saying",                 
+                                                      "remaining_audio": 0.0}  
+    00:08:20 DEBUG  livekit.agents   received user        {"room":             
+                                     transcript           "voice_assistant_roo…
+                                                          "user_transcript":   
+                                                          "Visin asking you.", 
+                                                          "language": "en-US", 
+                                                          "transcript_delay":  
+                                                          0.5994327068328857}  
+             INFO   google_genai.mo… AFC is enabled with  {"room":             
+                                     max remote calls:    "voice_assistant_roo…
+                                     10.                                       
+             DEBUG  livekit.plugins… eou prediction {"room":                   
+                                                    "voice_assistant_room_7181…
+                                                    "eou_probability":         
+                                                    0.09189283847808838,       
+                                                    "duration": 0.166, "input":
+                                                    "<|im_start|>user\nyeah<|i…
+                                                    what can i help you with   
+                                                    today<|im_end|>\n<|im_star…
+                                                    are                        
+                                                    you<|im_end|>\n<|im_start|…
+                                                    am doing great and ready to
+                                                    assist you how about       
+                                                    you<|im_end|>\n<|im_start|…
+                                                    visin asking you"}         
+             DEBUG  livekit.agents   using preemptive     {"room":             
+                                     generation           "voice_assistant_roo…
+                                                          "preemptive_lead_tim…
+                                                          0.2536454200744629}  
+             INFO   livekit.agents   EOU metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "multilingual", 
+                                                 "model_provider": "livekit",  
+                                                 "end_of_utterance_delay":     
+                                                 0.86, "transcription_delay":  
+                                                 0.61}                         
+    00:08:21 INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 5.05}       
+    00:08:24 INFO   livekit.agents   LLM metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name":                 
+                                                 "gemini-2.5-flash",           
+                                                 "model_provider": "Gemini",   
+                                                 "ttft": 3.94, "prompt_tokens":
+                                                 124, "prompt_cached_tokens":  
+                                                 0, "completion_tokens": 10,   
+                                                 "tokens_per_second": 2.54}    
+             DEBUG  livekit.agents   sent text to tts {"room":                 
+                                                      "voice_assistant_room_71…
+                                                      "text": "I'm ready What  
+                                                      would you like to ask",  
+                                                      "remaining_audio": 0.0}  
+    00:08:26 INFO   livekit.agents   TTS metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "FALCON",       
+                                                 "model_provider": "Murf",     
+                                                 "ttfb": 0.6992143000243232,   
+                                                 "audio_duration": 2.72}       
+             INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 5.05}       
+    00:08:31 INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 5.0}        
+    00:08:33 DEBUG  livekit.agents   received user        {"room":             
+                                     transcript           "voice_assistant_roo…
+                                                          "user_transcript":   
+                                                          "Hello? Hello?",     
+                                                          "language": "en-US", 
+                                                          "transcript_delay":  
+                                                          1.5550415515899658}  
+             INFO   google_genai.mo… AFC is enabled with  {"room":             
+                                     max remote calls:    "voice_assistant_roo…
+                                     10.                                       
+    00:08:34 DEBUG  livekit.agents   received user        {"room":             
+                                     transcript           "voice_assistant_roo…
+                                                          "user_transcript":   
+                                                          "Hello?", "language":
+                                                          "en-US",             
+                                                          "transcript_delay":  
+                                                          0.7448043823242188}  
+             INFO   google_genai.mo… AFC is enabled with  {"room":             
+                                     max remote calls:    "voice_assistant_roo…
+                                     10.                                       
+             DEBUG  livekit.plugins… eou prediction {"room":                   
+                                                    "voice_assistant_room_7181…
+                                                    "eou_probability":         
+                                                    0.10618233680725098,       
+                                                    "duration": 0.205, "input":
+                                                    "<|im_start|>assistant\nyes
+                                                    what can i help you with   
+                                                    today<|im_end|>\n<|im_star…
+                                                    are                        
+                                                    you<|im_end|>\n<|im_start|…
+                                                    am doing great and ready to
+                                                    assist you how about       
+                                                    you<|im_end|>\n<|im_start|…
+                                                    visin asking               
+                                                    you<|im_end|>\n<|im_start|…
+                                                    ready what would you like  
+                                                    to                         
+                                                    ask<|im_end|>\n<|im_start|…
+                                                    hello hello"}              
+             DEBUG  livekit.agents   using preemptive     {"room":             
+                                     generation           "voice_assistant_roo…
+                                                          "preemptive_lead_tim…
+                                                          0.21907591819763184} 
+             INFO   livekit.agents   EOU metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "multilingual", 
+                                                 "model_provider": "livekit",  
+                                                 "end_of_utterance_delay":     
+                                                 0.97, "transcription_delay":  
+                                                 0.75}                         
+    00:08:36 INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 5.0}        
+             INFO   livekit.agents   LLM metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name":                 
+                                                 "gemini-2.5-flash",           
+                                                 "model_provider": "Gemini",   
+                                                 "ttft": 2.31, "prompt_tokens":
+                                                 142, "prompt_cached_tokens":  
+                                                 0, "completion_tokens": 13,   
+                                                 "tokens_per_second": 5.62}    
+             DEBUG  livekit.agents   sent text to tts {"room":                 
+                                                      "voice_assistant_room_71…
+                                                      "text": "Hello I hear you
+                                                      loud and clear What's on 
+                                                      your mind",              
+                                                      "remaining_audio": 0.0}  
+    00:08:39 INFO   livekit.agents   TTS metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "FALCON",       
+                                                 "model_provider": "Murf",     
+                                                 "ttfb": 0.3889696999685839,   
+                                                 "audio_duration": 3.6}        
+    00:08:41 INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 5.05}       
+    00:08:44 DEBUG  livekit.agents   resumed false        {"room":             
+                                     interrupted speech   "voice_assistant_roo…
+                                                          "timeout": 2.0}      
+    00:08:46 INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 5.05}       
+    00:08:51 INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 5.0}        
+    00:08:56 INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 5.0}        
+    00:08:57 DEBUG  livekit.agents   resumed false        {"room":             
+                                     interrupted speech   "voice_assistant_roo…
+                                                          "timeout": 2.0}      
+    00:09:01 INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 5.05}       
+    00:09:06 INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 5.0}        
+    00:09:08 DEBUG  livekit.agents   received user        {"room":             
+                                     transcript           "voice_assistant_roo…
+                                                          "user_transcript":   
+                                                          "Hello?", "language":
+                                                          "en-US",             
+                                                          "transcript_delay":  
+                                                          1.2236220836639404}  
+             INFO   google_genai.mo… AFC is enabled with  {"room":             
+                                     max remote calls:    "voice_assistant_roo…
+                                     10.                                       
+             DEBUG  livekit.plugins… eou prediction {"room":                   
+                                                    "voice_assistant_room_7181…
+                                                    "eou_probability":         
+                                                    0.1609327495098114,        
+                                                    "duration": 0.215, "input":
+                                                    "<|im_start|>assistant\ni  
+                                                    am doing great and ready to
+                                                    assist you how about       
+                                                    you<|im_end|>\n<|im_start|…
+                                                    visin asking               
+                                                    you<|im_end|>\n<|im_start|…
+                                                    ready what would you like  
+                                                    to                         
+                                                    ask<|im_end|>\n<|im_start|…
+                                                    hello                      
+                                                    hello<|im_end|>\n<|im_star…
+                                                    i hear you loud and clear  
+                                                    what's on your             
+                                                    mind<|im_end|>\n<|im_start…
+             DEBUG  livekit.agents   using preemptive     {"room":             
+                                     generation           "voice_assistant_roo…
+                                                          "preemptive_lead_tim…
+                                                          0.2438950538635254}  
+             INFO   livekit.agents   EOU metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "multilingual", 
+                                                 "model_provider": "livekit",  
+                                                 "end_of_utterance_delay":     
+                                                 1.47, "transcription_delay":  
+                                                 1.23}                         
+    00:09:10 INFO   livekit.agents   LLM metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name":                 
+                                                 "gemini-2.5-flash",           
+                                                 "model_provider": "Gemini",   
+                                                 "ttft": 2.7, "prompt_tokens": 
+                                                 159, "prompt_cached_tokens":  
+                                                 0, "completion_tokens": 11,   
+                                                 "tokens_per_second": 4.07}    
+             DEBUG  livekit.agents   sent text to tts {"room":                 
+                                                      "voice_assistant_room_71…
+                                                      "text": "Hello again I'm 
+                                                      here How can I help you",
+                                                      "remaining_audio": 0.0}  
+    00:09:11 INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 5.0}        
+    00:09:12 INFO   livekit.agents   TTS metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "FALCON",       
+                                                 "model_provider": "Murf",     
+                                                 "ttfb": 0.6770712999859825,   
+                                                 "audio_duration": 1.76}       
+             DEBUG  livekit.agents   received user        {"room":             
+                                     transcript           "voice_assistant_roo…
+                                                          "user_transcript":   
+                                                          "Are you there?",    
+                                                          "language": "en-US", 
+                                                          "transcript_delay":  
+                                                          0.5472304821014404}  
+             WARNI… livekit.agents   _SegmentSynchronizer {"room":             
+                                     Impl.resume called   "voice_assistant_roo…
+                                     after close                               
+             DEBUG  livekit.plugins… eou prediction {"room":                   
+                                                    "voice_assistant_room_7181…
+                                                    "eou_probability":         
+                                                    0.6031009554862976,        
+                                                    "duration": 0.162, "input":
+                                                    "<|im_start|>assistant\ni'm
+                                                    ready what would you like  
+                                                    to                         
+                                                    ask<|im_end|>\n<|im_start|…
+                                                    hello                      
+                                                    hello<|im_end|>\n<|im_star…
+                                                    i hear you loud and clear  
+                                                    what's on your             
+                                                    mind<|im_end|>\n<|im_start…
+                                                    you there"}                
+             INFO   livekit.agents   EOU metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "multilingual", 
+                                                 "model_provider": "livekit",  
+                                                 "end_of_utterance_delay":     
+                                                 0.74, "transcription_delay":  
+                                                 0.55}                         
+             INFO   google_genai.mo… AFC is enabled with  {"room":             
+                                     max remote calls:    "voice_assistant_roo…
+                                     10.                                       
+    00:09:13 INFO   livekit.agents   LLM metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name":                 
+                                                 "gemini-2.5-flash",           
+                                                 "model_provider": "Gemini",   
+                                                 "ttft": 1.34, "prompt_tokens":
+                                                 166, "prompt_cached_tokens":  
+                                                 0, "completion_tokens": 14,   
+                                                 "tokens_per_second": 10.42}   
+    00:09:14 DEBUG  livekit.agents   sent text to tts {"room":                 
+                                                      "voice_assistant_room_71…
+                                                      "text": "Yes I am here   
+                                                      and ready to help How can
+                                                      I assist you today",     
+                                                      "remaining_audio": 0.0}  
+    00:09:16 INFO   livekit.agents   TTS metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "FALCON",       
+                                                 "model_provider": "Murf",     
+                                                 "ttfb": 0.3714701000135392,   
+                                                 "audio_duration": 3.28}       
+             INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 5.05}       
+    00:09:21 INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 5.0}        
+    00:09:24 DEBUG  livekit.agents   received user        {"room":             
+                                     transcript           "voice_assistant_roo…
+                                                          "user_transcript":   
+                                                          "What's your name?", 
+                                                          "language": "en-US", 
+                                                          "transcript_delay":  
+                                                          1.5962986946105957}  
+             INFO   google_genai.mo… AFC is enabled with  {"room":             
+                                     max remote calls:    "voice_assistant_roo…
+                                     10.                                       
+             DEBUG  livekit.plugins… eou prediction {"room":                   
+                                                    "voice_assistant_room_7181…
+                                                    "eou_probability":         
+                                                    0.49621090292930603,       
+                                                    "duration": 0.184, "input":
+                                                    "<|im_start|>assistant\nhe…
+                                                    i hear you loud and clear  
+                                                    what's on your             
+                                                    mind<|im_end|>\n<|im_start…
+                                                    you                        
+                                                    there<|im_end|>\n<|im_star…
+                                                    i am here and ready to help
+                                                    how can i assist you       
+                                                    today<|im_end|>\n<|im_star…
+                                                    your name"}                
+             DEBUG  livekit.agents   using preemptive     {"room":             
+                                     generation           "voice_assistant_roo…
+                                                          "preemptive_lead_tim…
+                                                          0.2021174430847168}  
+             INFO   livekit.agents   EOU metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "multilingual", 
+                                                 "model_provider": "livekit",  
+                                                 "end_of_utterance_delay": 1.8,
+                                                 "transcription_delay": 1.6}   
+    00:09:25 INFO   livekit.agents   LLM metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name":                 
+                                                 "gemini-2.5-flash",           
+                                                 "model_provider": "Gemini",   
+                                                 "ttft": 1.31, "prompt_tokens":
+                                                 188, "prompt_cached_tokens":  
+                                                 0, "completion_tokens": 11,   
+                                                 "tokens_per_second": 8.41}    
+             DEBUG  livekit.agents   sent text to tts {"room":                 
+                                                      "voice_assistant_room_71…
+                                                      "text": "I am an AI      
+                                                      assistant and do not have
+                                                      a name",                 
+                                                      "remaining_audio": 0.0}  
+    00:09:26 INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 5.0}        
+    00:09:27 INFO   livekit.agents   TTS metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "FALCON",       
+                                                 "model_provider": "Murf",     
+                                                 "ttfb": 0.3799369999906048,   
+                                                 "audio_duration": 2.64}       
+    00:09:31 INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 5.05}       
+    00:09:33 DEBUG  livekit.agents   received user        {"room":             
+                                     transcript           "voice_assistant_roo…
+                                                          "user_transcript":   
+                                                          "At least, do your   
+                                                          voice have a name?", 
+                                                          "language": "en-US", 
+                                                          "transcript_delay":  
+                                                          0.46782493591308594} 
+             INFO   google_genai.mo… AFC is enabled with  {"room":             
+                                     max remote calls:    "voice_assistant_roo…
+                                     10.                                       
+             DEBUG  livekit.plugins… eou prediction {"room":                   
+                                                    "voice_assistant_room_7181…
+                                                    "eou_probability":         
+                                                    0.5944935083389282,        
+                                                    "duration": 0.205, "input":
+                                                    "<|im_start|>assistant\nhe…
+                                                    you                        
+                                                    there<|im_end|>\n<|im_star…
+                                                    i am here and ready to help
+                                                    how can i assist you       
+                                                    today<|im_end|>\n<|im_star…
+                                                    your                       
+                                                    name<|im_end|>\n<|im_start…
+                                                    am an ai assistant and do  
+                                                    not have a                 
+                                                    name<|im_end|>\n<|im_start…
+                                                    least do your voice have a 
+                                                    name"}                     
+             DEBUG  livekit.agents   using preemptive     {"room":             
+                                     generation           "voice_assistant_roo…
+                                                          "preemptive_lead_tim…
+                                                          0.28867340087890625} 
+             INFO   livekit.agents   EOU metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "multilingual", 
+                                                 "model_provider": "livekit",  
+                                                 "end_of_utterance_delay":     
+                                                 0.76, "transcription_delay":  
+                                                 0.47}                         
+    00:09:34 INFO   livekit.agents   LLM metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name":                 
+                                                 "gemini-2.5-flash",           
+                                                 "model_provider": "Gemini",   
+                                                 "ttft": 1.45, "prompt_tokens":
+                                                 211, "prompt_cached_tokens":  
+                                                 0, "completion_tokens": 20,   
+                                                 "tokens_per_second": 13.79}   
+             DEBUG  livekit.agents   sent text to tts {"room":                 
+                                                      "voice_assistant_room_71…
+                                                      "text": "My voice also   
+                                                      does not have a name It's
+                                                      simply the sound I use to
+                                                      communicate with you",   
+                                                      "remaining_audio": 0.0}  
+    00:09:36 INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 5.0}        
+    00:09:38 INFO   livekit.agents   TTS metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "FALCON",       
+                                                 "model_provider": "Murf",     
+                                                 "ttfb": 0.38201659999322146,  
+                                                 "audio_duration": 5.68}       
+    00:09:41 INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 5.0}        
+    00:09:45 DEBUG  livekit.agents   received user        {"room":             
+                                     transcript           "voice_assistant_roo…
+                                                          "user_transcript":   
+                                                          "What is the text tag
+                                                          being used by",      
+                                                          "language": "en-US", 
+                                                          "transcript_delay":  
+                                                          0.5853815078735352}  
+             INFO   google_genai.mo… AFC is enabled with  {"room":             
+                                     max remote calls:    "voice_assistant_roo…
+                                     10.                                       
+             DEBUG  livekit.plugins… eou prediction {"room":                   
+                                                    "voice_assistant_room_7181…
+                                                    "eou_probability":         
+                                                    0.45652422308921814,       
+                                                    "duration": 0.249, "input":
+                                                    "<|im_start|>assistant\nyes
+                                                    i am here and ready to help
+                                                    how can i assist you       
+                                                    today<|im_end|>\n<|im_star…
+                                                    your                       
+                                                    name<|im_end|>\n<|im_start…
+                                                    am an ai assistant and do  
+                                                    not have a                 
+                                                    name<|im_end|>\n<|im_start…
+                                                    least do your voice have a 
+                                                    name<|im_end|>\n<|im_start…
+                                                    voice also does not have a 
+                                                    name it's simply the sound 
+                                                    i use to communicate with  
+                                                    you<|im_end|>\n<|im_start|…
+                                                    is the text tag being used 
+                                                    by"}                       
+             DEBUG  livekit.agents   using preemptive     {"room":             
+                                     generation           "voice_assistant_roo…
+                                                          "preemptive_lead_tim…
+                                                          0.27365851402282715} 
+             INFO   livekit.agents   EOU metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "multilingual", 
+                                                 "model_provider": "livekit",  
+                                                 "end_of_utterance_delay":     
+                                                 0.86, "transcription_delay":  
+                                                 0.59}                         
+    00:09:46 INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 5.05}       
+    00:09:47 INFO   livekit.agents   LLM metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name":                 
+                                                 "gemini-2.5-flash",           
+                                                 "model_provider": "Gemini",   
+                                                 "ttft": 1.53, "prompt_tokens":
+                                                 241, "prompt_cached_tokens":  
+                                                 0, "completion_tokens": 24,   
+                                                 "tokens_per_second": 15.64}   
+             DEBUG  livekit.agents   sent text to tts {"room":                 
+                                                      "voice_assistant_room_71…
+                                                      "text": "I'm not sure    
+                                                      what you mean by text tag
+                                                      Could you explain a bit  
+                                                      more about what you're   
+                                                      looking for",            
+                                                      "remaining_audio": 0.0}  
+             DEBUG  livekit.agents   received user        {"room":             
+                                     transcript           "voice_assistant_roo…
+                                                          "user_transcript":   
+                                                          "you?", "language":  
+                                                          "en-US",             
+                                                          "transcript_delay":  
+                                                          0.6192870140075684}  
+             DEBUG  livekit.plugins… eou prediction {"room":                   
+                                                    "voice_assistant_room_7181…
+                                                    "eou_probability":         
+                                                    0.616036593914032,         
+                                                    "duration": 0.213, "input":
+                                                    "<|im_start|>user\nwhat's  
+                                                    your                       
+                                                    name<|im_end|>\n<|im_start…
+                                                    am an ai assistant and do  
+                                                    not have a                 
+                                                    name<|im_end|>\n<|im_start…
+                                                    least do your voice have a 
+                                                    name<|im_end|>\n<|im_start…
+                                                    voice also does not have a 
+                                                    name it's simply the sound 
+                                                    i use to communicate with  
+                                                    you<|im_end|>\n<|im_start|…
+                                                    is the text tag being used 
+                                                    by you"}                   
+             INFO   livekit.agents   EOU metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "multilingual", 
+                                                 "model_provider": "livekit",  
+                                                 "end_of_utterance_delay":     
+                                                 0.85, "transcription_delay":  
+                                                 0.62}                         
+             INFO   google_genai.mo… AFC is enabled with  {"room":             
+                                     max remote calls:    "voice_assistant_roo…
+                                     10.                                       
+    00:09:51 INFO   livekit.agents   LLM metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name":                 
+                                                 "gemini-2.5-flash",           
+                                                 "model_provider": "Gemini",   
+                                                 "ttft": 3.95, "prompt_tokens":
+                                                 243, "prompt_cached_tokens":  
+                                                 0, "completion_tokens": 22,   
+                                                 "tokens_per_second": 5.56}    
+             DEBUG  livekit.agents   sent text to tts {"room":                 
+                                                      "voice_assistant_room_71…
+                                                      "text": "I am an AI      
+                                                      assistant and I do not   
+                                                      use a text tag My        
+                                                      responses are generated  
+                                                      by a large language      
+                                                      model",                  
+                                                      "remaining_audio": 0.0}  
+             INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 5.05}       
+    00:09:56 INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 5.0}        
+    00:09:58 INFO   livekit.agents   TTS metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "FALCON",       
+                                                 "model_provider": "Murf",     
+                                                 "ttfb": 3.381453799956944,    
+                                                 "audio_duration": 7.28}       
+    00:10:01 INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 5.0}        
+    00:10:07 INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 5.05}       
+    00:10:12 INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 5.05}       
+    00:10:14 DEBUG  livekit.agents   received user        {"room":             
+                                     transcript           "voice_assistant_roo…
+                                                          "user_transcript":   
+                                                          "Okay.", "language": 
+                                                          "en-US",             
+                                                          "transcript_delay":  
+                                                          0.5886867046356201}  
+             INFO   google_genai.mo… AFC is enabled with  {"room":             
+                                     max remote calls:    "voice_assistant_roo…
+                                     10.                                       
+             DEBUG  livekit.plugins… eou prediction {"room":                   
+                                                    "voice_assistant_room_7181…
+                                                    "eou_probability":         
+                                                    0.04024077206850052,       
+                                                    "duration": 0.231, "input":
+                                                    "<|im_start|>user\nat least
+                                                    do your voice have a       
+                                                    name<|im_end|>\n<|im_start…
+                                                    voice also does not have a 
+                                                    name it's simply the sound 
+                                                    i use to communicate with  
+                                                    you<|im_end|>\n<|im_start|…
+                                                    is the text tag being used 
+                                                    by                         
+                                                    you<|im_end|>\n<|im_start|…
+                                                    am an ai assistant and i do
+                                                    not use a text tag my      
+                                                    responses are generated by 
+                                                    a large language           
+                                                    model<|im_end|>\n<|im_star…
+             DEBUG  livekit.agents   using preemptive     {"room":             
+                                     generation           "voice_assistant_roo…
+                                                          "preemptive_lead_tim…
+                                                          0.2559776306152344}  
+             INFO   livekit.agents   EOU metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "multilingual", 
+                                                 "model_provider": "livekit",  
+                                                 "end_of_utterance_delay":     
+                                                 0.85, "transcription_delay":  
+                                                 0.59}                         
+    00:10:16 INFO   livekit.agents   LLM metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name":                 
+                                                 "gemini-2.5-flash",           
+                                                 "model_provider": "Gemini",   
+                                                 "ttft": 1.49, "prompt_tokens":
+                                                 269, "prompt_cached_tokens":  
+                                                 0, "completion_tokens": 9,    
+                                                 "tokens_per_second": 6.02}    
+             DEBUG  livekit.agents   sent text to tts {"room":                 
+                                                      "voice_assistant_room_71…
+                                                      "text": "Is there        
+                                                      anything else I can help 
+                                                      you with",               
+                                                      "remaining_audio": 0.0}  
+    00:10:17 INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 5.05}       
+             INFO   livekit.agents   TTS metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "FALCON",       
+                                                 "model_provider": "Murf",     
+                                                 "ttfb": 0.4025351000018418,   
+                                                 "audio_duration": 1.84}       
+    00:10:22 INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 5.05}       
+    00:10:27 INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 5.0}        
+    00:10:32 INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 5.05}       
+    00:10:34 DEBUG  livekit.agents   received user        {"room":             
+                                     transcript           "voice_assistant_roo…
+                                                          "user_transcript":   
+                                                          "You please help me  
+                                                          with", "language":   
+                                                          "en-US",             
+                                                          "transcript_delay":  
+                                                          0.21672892570495605} 
+             INFO   google_genai.mo… AFC is enabled with  {"room":             
+                                     max remote calls:    "voice_assistant_roo…
+                                     10.                                       
+             DEBUG  livekit.agents   received user        {"room":             
+                                     transcript           "voice_assistant_roo…
+                                                          "user_transcript":   
+                                                          "the", "language":   
+                                                          "en-US",             
+                                                          "transcript_delay":  
+                                                          0.021723270416259766}
+             INFO   google_genai.mo… AFC is enabled with  {"room":             
+                                     max remote calls:    "voice_assistant_roo…
+                                     10.                                       
+    00:10:36 DEBUG  livekit.agents   received user        {"room":             
+                                     transcript           "voice_assistant_roo…
+                                                          "user_transcript":   
+                                                          "clearing my         
+                                                          assignments?",       
+                                                          "language": "en-US", 
+                                                          "transcript_delay":  
+                                                          0.7387392520904541}  
+             INFO   google_genai.mo… AFC is enabled with  {"room":             
+                                     max remote calls:    "voice_assistant_roo…
+                                     10.                                       
+             DEBUG  livekit.plugins… eou prediction {"room":                   
+                                                    "voice_assistant_room_7181…
+                                                    "eou_probability":         
+                                                    0.38315191864967346,       
+                                                    "duration": 0.217, "input":
+                                                    "<|im_start|>user\nwhat is 
+                                                    the text tag being used by 
+                                                    you<|im_end|>\n<|im_start|…
+                                                    am an ai assistant and i do
+                                                    not use a text tag my      
+                                                    responses are generated by 
+                                                    a large language           
+                                                    model<|im_end|>\n<|im_star…
+                                                    there anything else i can  
+                                                    help you                   
+                                                    with<|im_end|>\n<|im_start…
+                                                    please help me with the    
+                                                    clearing my assignments"}  
+             DEBUG  livekit.agents   using preemptive     {"room":             
+                                     generation           "voice_assistant_roo…
+                                                          "preemptive_lead_tim…
+                                                          0.23997855186462402} 
+             INFO   livekit.agents   EOU metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "multilingual", 
+                                                 "model_provider": "livekit",  
+                                                 "end_of_utterance_delay":     
+                                                 0.99, "transcription_delay":  
+                                                 0.75}                         
+    00:10:37 INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 5.0}        
+    00:10:38 INFO   livekit.agents   LLM metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name":                 
+                                                 "gemini-2.5-flash",           
+                                                 "model_provider": "Gemini",   
+                                                 "ttft": 2.65, "prompt_tokens":
+                                                 290, "prompt_cached_tokens":  
+                                                 0, "completion_tokens": 25,   
+                                                 "tokens_per_second": 9.44}    
+             DEBUG  livekit.agents   sent text to tts {"room":                 
+                                                      "voice_assistant_room_71…
+                                                      "text": "I can certainly 
+                                                      help you understand      
+                                                      concepts brainstorm ideas
+                                                      or provide information   
+                                                      that might be useful for 
+                                                      your assignments What    
+                                                      specifically are you     
+                                                      working on",             
+                                                      "remaining_audio": 0.0}  
+    00:10:42 INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 5.0}        
+    00:10:44 INFO   livekit.agents   TTS metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "FALCON",       
+                                                 "model_provider": "Murf",     
+                                                 "ttfb": 0.3730542999692261,   
+                                                 "audio_duration": 8.72}       
+    00:10:47 INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 5.0}        
+    00:10:52 INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 5.05}       
+    00:10:53 DEBUG  livekit.agents   received user        {"room":             
+                                     transcript           "voice_assistant_roo…
+                                                          "user_transcript":   
+                                                          "This", "language":  
+                                                          "en-US",             
+                                                          "transcript_delay":  
+                                                          0.18887734413146973} 
+             INFO   google_genai.mo… AFC is enabled with  {"room":             
+                                     max remote calls:    "voice_assistant_roo…
+                                     10.                                       
+    00:10:54 DEBUG  livekit.agents   received user        {"room":             
+                                     transcript           "voice_assistant_roo…
+                                                          "user_transcript":   
+                                                          "right amazed. I'll  
+                                                          check that.",        
+                                                          "language": "en-US", 
+                                                          "transcript_delay":  
+                                                          0.750011682510376}   
+             INFO   google_genai.mo… AFC is enabled with  {"room":             
+                                     max remote calls:    "voice_assistant_roo…
+                                     10.                                       
+    00:10:55 DEBUG  livekit.plugins… eou prediction {"room":                   
+                                                    "voice_assistant_room_7181…
+                                                    "eou_probability":         
+                                                    0.005083541385829449,      
+                                                    "duration": 0.288, "input":
+                                                    "<|im_start|>assistant\ni  
+                                                    am an ai assistant and i do
+                                                    not use a text tag my      
+                                                    responses are generated by 
+                                                    a large language           
+                                                    model<|im_end|>\n<|im_star…
+                                                    there anything else i can  
+                                                    help you                   
+                                                    with<|im_end|>\n<|im_start…
+                                                    please help me with the    
+                                                    clearing my                
+                                                    assignments<|im_end|>\n<|i…
+                                                    can certainly help you     
+                                                    understand concepts        
+                                                    brainstorm ideas or provide
+                                                    information that might be  
+                                                    useful for your assignments
+                                                    what specifically are you  
+                                                    working                    
+                                                    on<|im_end|>\n<|im_start|>…
+                                                    right amazed i'll check    
+                                                    that"}                     
+    00:10:57 DEBUG  livekit.agents   using preemptive     {"room":             
+                                     generation           "voice_assistant_roo…
+                                                          "preemptive_lead_tim…
+                                                          2.2427635192871094}  
+             INFO   livekit.agents   EOU metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "multilingual", 
+                                                 "model_provider": "livekit",  
+                                                 "end_of_utterance_delay": 3.0,
+                                                 "transcription_delay": 0.76}  
+             INFO   livekit.agents   LLM metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name":                 
+                                                 "gemini-2.5-flash",           
+                                                 "model_provider": "Gemini",   
+                                                 "ttft": 2.29, "prompt_tokens":
+                                                 327, "prompt_cached_tokens":  
+                                                 0, "completion_tokens": 12,   
+                                                 "tokens_per_second": 5.24}    
+             DEBUG  livekit.agents   sent text to tts {"room":                 
+                                                      "voice_assistant_room_71…
+                                                      "text": "Alright I'm here
+                                                      if you need any          
+                                                      assistance with that",   
+                                                      "remaining_audio": 0.0}  
+             INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 5.05}       
+    00:10:59 INFO   livekit.agents   TTS metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "FALCON",       
+                                                 "model_provider": "Murf",     
+                                                 "ttfb": 0.3620357000036165,   
+                                                 "audio_duration": 3.12}       
+    00:11:02 INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 5.0}        
+    00:11:07 INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 5.0}        
+    00:11:12 INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 5.05}       
+    00:11:13 DEBUG  livekit.agents   received user        {"room":             
+                                     transcript           "voice_assistant_roo…
+                                                          "user_transcript":   
+                                                          "Can you see my      
+                                                          screen?", "language":
+                                                          "en-US",             
+                                                          "transcript_delay":  
+                                                          0.6082489490509033}  
+             INFO   google_genai.mo… AFC is enabled with  {"room":             
+                                     max remote calls:    "voice_assistant_roo…
+                                     10.                                       
+    00:11:14 DEBUG  livekit.plugins… eou prediction {"room":                   
+                                                    "voice_assistant_room_7181…
+                                                    "eou_probability":         
+                                                    0.08223187923431396,       
+                                                    "duration": 0.272, "input":
+                                                    "<|im_start|>assistant\nis 
+                                                    there anything else i can  
+                                                    help you                   
+                                                    with<|im_end|>\n<|im_start…
+                                                    please help me with the    
+                                                    clearing my                
+                                                    assignments<|im_end|>\n<|i…
+                                                    can certainly help you     
+                                                    understand concepts        
+                                                    brainstorm ideas or provide
+                                                    information that might be  
+                                                    useful for your assignments
+                                                    what specifically are you  
+                                                    working                    
+                                                    on<|im_end|>\n<|im_start|>…
+                                                    right amazed i'll check    
+                                                    that<|im_end|>\n<|im_start…
+                                                    i'm here if you need any   
+                                                    assistance with            
+                                                    that<|im_end|>\n<|im_start…
+                                                    you see my screen"}        
+             DEBUG  livekit.agents   using preemptive     {"room":             
+                                     generation           "voice_assistant_roo…
+                                                          "preemptive_lead_tim…
+                                                          0.2970273494720459}  
+             INFO   livekit.agents   EOU metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "multilingual", 
+                                                 "model_provider": "livekit",  
+                                                 "end_of_utterance_delay":     
+                                                 0.91, "transcription_delay":  
+                                                 0.61}                         
+    00:11:16 INFO   livekit.agents   LLM metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name":                 
+                                                 "gemini-2.5-flash",           
+                                                 "model_provider": "Gemini",   
+                                                 "ttft": 2.26, "prompt_tokens":
+                                                 347, "prompt_cached_tokens":  
+                                                 0, "completion_tokens": 18,   
+                                                 "tokens_per_second": 7.96}    
+             DEBUG  livekit.agents   sent text to tts {"room":                 
+                                                      "voice_assistant_room_71…
+                                                      "text": "I'm sorry I     
+                                                      cannot see your screen As
+                                                      an AI I only process text
+                                                      and audio",              
+                                                      "remaining_audio": 0.0}  
+    00:11:17 INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 5.0}        
+    00:11:19 INFO   livekit.agents   TTS metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "FALCON",       
+                                                 "model_provider": "Murf",     
+                                                 "ttfb": 0.37756049999734387,  
+                                                 "audio_duration": 4.88}       
+    00:11:22 INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 5.0}        
+    00:11:27 INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 5.05}       
+    00:11:31 INFO   google_genai.mo… AFC is enabled with  {"room":             
+                                     max remote calls:    "voice_assistant_roo…
+                                     10.                                       
+    00:11:32 INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 5.0}        
+    00:11:33 INFO   livekit.agents   LLM metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name":                 
+                                                 "gemini-2.5-flash",           
+                                                 "model_provider": "Gemini",   
+                                                 "ttft": 1.68, "prompt_tokens":
+                                                 368, "prompt_cached_tokens":  
+                                                 0, "completion_tokens": 14,   
+                                                 "tokens_per_second": 8.35}    
+             DEBUG  livekit.agents   sent text to tts {"room":                 
+                                                      "voice_assistant_room_71…
+                                                      "text": "Is there        
+                                                      something specific you'd 
+                                                      like to tell me or ask   
+                                                      me", "remaining_audio":  
+                                                      0.0}                     
+    00:11:35 INFO   livekit.agents   TTS metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "FALCON",       
+                                                 "model_provider": "Murf",     
+                                                 "ttfb": 0.38973309996072203,  
+                                                 "audio_duration": 3.6}        
+    00:11:36 INFO   google_genai.mo… AFC is enabled with  {"room":             
+                                     max remote calls:    "voice_assistant_roo…
+                                     10.                                       
+    00:11:37 INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 5.0}        
+    00:11:38 INFO   livekit.agents   LLM metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name":                 
+                                                 "gemini-2.5-flash",           
+                                                 "model_provider": "Gemini",   
+                                                 "ttft": 1.49, "prompt_tokens":
+                                                 369, "prompt_cached_tokens":  
+                                                 0, "completion_tokens": 13,   
+                                                 "tokens_per_second": 8.72}    
+             DEBUG  livekit.agents   sent text to tts {"room":                 
+                                                      "voice_assistant_room_71…
+                                                      "text": "Goodbye Have a  
+                                                      great day Let me know if 
+                                                      you need anything else", 
+                                                      "remaining_audio": 0.0}  
+    00:11:40 INFO   livekit.agents   TTS metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "FALCON",       
+                                                 "model_provider": "Murf",     
+                                                 "ttfb": 0.5139999000239186,   
+                                                 "audio_duration": 3.52}       
+    00:11:42 INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 5.05}       
+    00:11:47 INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 5.0}        
+    00:11:48 DEBUG  livekit.agents   received user        {"room":             
+                                     transcript           "voice_assistant_roo…
+                                                          "user_transcript":   
+                                                          "How about you?",    
+                                                          "language": "en-US", 
+                                                          "transcript_delay":  
+                                                          0.6765656471252441}  
+             INFO   google_genai.mo… AFC is enabled with  {"room":             
+                                     max remote calls:    "voice_assistant_roo…
+                                     10.                                       
+             DEBUG  livekit.plugins… eou prediction {"room":                   
+                                                    "voice_assistant_room_7181…
+                                                    "eou_probability":         
+                                                    0.06042717769742012,       
+                                                    "duration": 0.217, "input":
+                                                    "<|im_start|>assistant\ni'm
+                                                    sorry i cannot see your    
+                                                    screen as an ai i only     
+                                                    process text and           
+                                                    audio<|im_end|>\n<|im_star…
+                                                    there something specific   
+                                                    you'd like                 
+                                                    to<|im_end|>\n<|im_start|>…
+                                                    have a great day let me    
+                                                    know if you need anything  
+                                                    else<|im_end|>\n<|im_start…
+                                                    about you"}                
+             DEBUG  livekit.agents   using preemptive     {"room":             
+                                     generation           "voice_assistant_roo…
+                                                          "preemptive_lead_tim…
+                                                          0.23955917358398438} 
+             INFO   livekit.agents   EOU metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "multilingual", 
+                                                 "model_provider": "livekit",  
+                                                 "end_of_utterance_delay":     
+                                                 0.92, "transcription_delay":  
+                                                 0.68}                         
+    00:11:50 INFO   livekit.agents   LLM metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name":                 
+                                                 "gemini-2.5-flash",           
+                                                 "model_provider": "Gemini",   
+                                                 "ttft": 2.59, "prompt_tokens":
+                                                 399, "prompt_cached_tokens":  
+                                                 0, "completion_tokens": 26,   
+                                                 "tokens_per_second": 10.04}   
+             DEBUG  livekit.agents   sent text to tts {"room":                 
+                                                      "voice_assistant_room_71…
+                                                      "text": "I'm an AI so I  
+                                                      don't experience days    
+                                                      like humans do but I'm   
+                                                      always here and ready to 
+                                                      assist you",             
+                                                      "remaining_audio": 0.0}  
+    00:11:52 INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 5.05}       
+    00:11:55 INFO   livekit.agents   TTS metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "FALCON",       
+                                                 "model_provider": "Murf",     
+                                                 "ttfb": 0.37696190003771335,  
+                                                 "audio_duration": 7.76}       
+    00:11:57 INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 5.05}       
+    00:12:02 INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 5.05}       
+    00:12:06 DEBUG  livekit.agents   received user        {"room":             
+                                     transcript           "voice_assistant_roo…
+                                                          "user_transcript":   
+                                                          "Think it's your     
+                                                          first day in work.", 
+                                                          "language": "en-US", 
+                                                          "transcript_delay":  
+                                                          0.46068811416625977} 
+             INFO   google_genai.mo… AFC is enabled with  {"room":             
+                                     max remote calls:    "voice_assistant_roo…
+                                     10.                                       
+             DEBUG  livekit.plugins… eou prediction {"room":                   
+                                                    "voice_assistant_room_7181…
+                                                    "eou_probability":         
+                                                    0.20546205341815948,       
+                                                    "duration": 0.289, "input":
+                                                    "<|im_start|>assistant\nis 
+                                                    there something specific   
+                                                    you'd like                 
+                                                    to<|im_end|>\n<|im_start|>…
+                                                    have a great day let me    
+                                                    know if you need anything  
+                                                    else<|im_end|>\n<|im_start…
+                                                    about                      
+                                                    you<|im_end|>\n<|im_start|…
+                                                    an ai so i don't experience
+                                                    days like humans do but i'm
+                                                    always here and ready to   
+                                                    assist                     
+                                                    you<|im_end|>\n<|im_start|…
+                                                    it's your first day in     
+                                                    work"}                     
+             DEBUG  livekit.agents   using preemptive     {"room":             
+                                     generation           "voice_assistant_roo…
+                                                          "preemptive_lead_tim…
+                                                          0.358675479888916}   
+             INFO   livekit.agents   EOU metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "multilingual", 
+                                                 "model_provider": "livekit",  
+                                                 "end_of_utterance_delay":     
+                                                 0.83, "transcription_delay":  
+                                                 0.47}                         
+    00:12:07 INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 5.05}       
+    00:12:08 INFO   livekit.agents   LLM metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name":                 
+                                                 "gemini-2.5-flash",           
+                                                 "model_provider": "Gemini",   
+                                                 "ttft": 2.45, "prompt_tokens":
+                                                 437, "prompt_cached_tokens":  
+                                                 0, "completion_tokens": 37,   
+                                                 "tokens_per_second": 15.08}   
+             DEBUG  livekit.agents   sent text to tts {"room":                 
+                                                      "voice_assistant_room_71…
+                                                      "text": "That's a fun    
+                                                      thought but as an AI I   
+                                                      don't really have a first
+                                                      day or a last day I'm    
+                                                      always here and ready to 
+                                                      help you whenever you    
+                                                      need me",                
+                                                      "remaining_audio": 0.0}  
+    00:12:12 INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 5.0}        
+    00:12:13 INFO   livekit.agents   TTS metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "FALCON",       
+                                                 "model_provider": "Murf",     
+                                                 "ttfb": 0.54217620001873,     
+                                                 "audio_duration": 7.12}       
+    00:12:17 INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 5.05}       
+    00:12:20 DEBUG  livekit.agents   received user        {"room":             
+                                     transcript           "voice_assistant_roo…
+                                                          "user_transcript":   
+                                                          "Okay. Bye then.",   
+                                                          "language": "en-US", 
+                                                          "transcript_delay":  
+                                                          0.5018854141235352}  
+             INFO   google_genai.mo… AFC is enabled with  {"room":             
+                                     max remote calls:    "voice_assistant_roo…
+                                     10.                                       
+    00:12:21 DEBUG  livekit.plugins… eou prediction {"room":                   
+                                                    "voice_assistant_room_7181…
+                                                    "eou_probability":         
+                                                    0.8160580992698669,        
+                                                    "duration": 0.344, "input":
+                                                    "<|im_start|>assistant\ngo…
+                                                    have a great day let me    
+                                                    know if you need anything  
+                                                    else<|im_end|>\n<|im_start…
+                                                    about                      
+                                                    you<|im_end|>\n<|im_start|…
+                                                    an ai so i don't experience
+                                                    days like humans do but i'm
+                                                    always here and ready to   
+                                                    assist                     
+                                                    you<|im_end|>\n<|im_start|…
+                                                    it's your first day in     
+                                                    work<|im_end|>\n<|im_start…
+                                                    a fun thought but as an ai 
+                                                    i don't really have a first
+                                                    day or a last day i'm      
+                                                    always here and ready to   
+                                                    help you whenever you need 
+                                                    me<|im_end|>\n<|im_start|>…
+                                                    bye then"}                 
+             DEBUG  livekit.agents   using preemptive     {"room":             
+                                     generation           "voice_assistant_roo…
+                                                          "preemptive_lead_tim…
+                                                          0.41640615463256836} 
+             INFO   livekit.agents   EOU metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "multilingual", 
+                                                 "model_provider": "livekit",  
+                                                 "end_of_utterance_delay":     
+                                                 0.92, "transcription_delay":  
+                                                 0.51}                         
+    00:12:22 INFO   livekit.agents   LLM metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name":                 
+                                                 "gemini-2.5-flash",           
+                                                 "model_provider": "Gemini",   
+                                                 "ttft": 1.45, "prompt_tokens":
+                                                 481, "prompt_cached_tokens":  
+                                                 0, "completion_tokens": 14,   
+                                                 "tokens_per_second": 9.6}     
+             DEBUG  livekit.agents   sent text to tts {"room":                 
+                                                      "voice_assistant_room_71…
+                                                      "text": "Goodbye Have a  
+                                                      wonderful day I'm here if
+                                                      you need anything else", 
+                                                      "remaining_audio": 0.0}  
+             INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 5.0}        
+    00:12:25 INFO   livekit.agents   TTS metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "FALCON",       
+                                                 "model_provider": "Murf",     
+                                                 "ttfb": 0.37714380002580583,  
+                                                 "audio_duration": 4.16}       
+    00:12:27 INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 5.05}       
+    00:12:28 DEBUG  livekit.agents   received user        {"room":             
+                                     transcript           "voice_assistant_roo…
+                                                          "user_transcript":   
+                                                          "This this in it.",  
+                                                          "language": "en-US", 
+                                                          "transcript_delay":  
+                                                          0.8038184642791748}  
+             INFO   google_genai.mo… AFC is enabled with  {"room":             
+                                     max remote calls:    "voice_assistant_roo…
+                                     10.                                       
+    00:12:30 DEBUG  livekit.agents   received user        {"room":             
+                                     transcript           "voice_assistant_roo…
+                                                          "user_transcript":   
+                                                          "How to record",     
+                                                          "language": "en-US", 
+                                                          "transcript_delay":  
+                                                          0.8067140579223633}  
+             INFO   google_genai.mo… AFC is enabled with  {"room":             
+                                     max remote calls:    "voice_assistant_roo…
+                                     10.                                       
+             DEBUG  livekit.plugins… eou prediction {"room":                   
+                                                    "voice_assistant_room_7181…
+                                                    "eou_probability":         
+                                                    0.02115049958229065,       
+                                                    "duration": 0.329, "input":
+                                                    "<|im_start|>assistant\ni'm
+                                                    an ai so i don't experience
+                                                    days like humans do but i'm
+                                                    always here and ready to   
+                                                    assist                     
+                                                    you<|im_end|>\n<|im_start|…
+                                                    it's your first day in     
+                                                    work<|im_end|>\n<|im_start…
+                                                    a fun thought but as an ai 
+                                                    i don't really have a first
+                                                    day or a last day i'm      
+                                                    always here and ready to   
+                                                    help you whenever you need 
+                                                    me<|im_end|>\n<|im_start|>…
+                                                    bye                        
+                                                    then<|im_end|>\n<|im_start…
+                                                    have a wonderful day i'm   
+                                                    here if you need anything  
+                                                    else<|im_end|>\n<|im_start…
+                                                    this in it how to record"} 
+             DEBUG  livekit.agents   using preemptive     {"room":             
+                                     generation           "voice_assistant_roo…
+                                                          "preemptive_lead_tim…
+                                                          0.3982536792755127}  
+             INFO   livekit.agents   EOU metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "multilingual", 
+                                                 "model_provider": "livekit",  
+                                                 "end_of_utterance_delay":     
+                                                 1.21, "transcription_delay":  
+                                                 0.81}                         
+    00:12:31 DEBUG  livekit.agents   received user        {"room":             
+                                     transcript           "voice_assistant_roo…
+                                                          "user_transcript":   
+                                                          "screen", "language":
+                                                          "en-US",             
+                                                          "transcript_delay":  
+                                                          0.5165462493896484}  
+    00:12:32 DEBUG  livekit.plugins… eou prediction {"room":                   
+                                                    "voice_assistant_room_7181…
+                                                    "eou_probability":         
+                                                    0.07631484419107437,       
+                                                    "duration": 0.256, "input":
+                                                    "<|im_start|>user\nthink   
+                                                    it's your first day in     
+                                                    work<|im_end|>\n<|im_start…
+                                                    a fun thought but as an ai 
+                                                    i don't really have a first
+                                                    day or a last day i'm      
+                                                    always here and ready to   
+                                                    help you whenever you need 
+                                                    me<|im_end|>\n<|im_start|>…
+                                                    bye                        
+                                                    then<|im_end|>\n<|im_start…
+                                                    have a wonderful day i'm   
+                                                    here if you need anything  
+                                                    else<|im_end|>\n<|im_start…
+                                                    this in it how to record   
+                                                    screen"}                   
+             INFO   livekit.agents   EOU metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "multilingual", 
+                                                 "model_provider": "livekit",  
+                                                 "end_of_utterance_delay":     
+                                                 0.81, "transcription_delay":  
+                                                 0.52}                         
+             INFO   google_genai.mo… AFC is enabled with  {"room":             
+                                     max remote calls:    "voice_assistant_roo…
+                                     10.                                       
+             DEBUG  livekit.agents   received user        {"room":             
+                                     transcript           "voice_assistant_roo…
+                                                          "user_transcript":   
+                                                          "with", "language":  
+                                                          "en-US",             
+                                                          "transcript_delay":  
+                                                          0.04358959197998047} 
+             INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 5.05}       
+    00:12:34 INFO   livekit.agents   LLM metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name":                 
+                                                 "gemini-2.5-flash",           
+                                                 "model_provider": "Gemini",   
+                                                 "ttft": 2.39, "prompt_tokens":
+                                                 506, "prompt_cached_tokens":  
+                                                 0, "completion_tokens": 43,   
+                                                 "tokens_per_second": 17.91}   
+             DEBUG  livekit.agents   sent text to tts {"room":                 
+                                                      "voice_assistant_room_71…
+                                                      "text": "There are       
+                                                      several ways to record   
+                                                      your screen depending on 
+                                                      your device On Windows   
+                                                      you can use the Xbox Game
+                                                      Bar by pressing Windows  
+                                                      key plus G On Mac you can
+                                                      use QuickTime Player by  
+                                                      going to File then New   
+                                                      Screen Recording",       
+                                                      "remaining_audio": 0.0}  
+    00:12:35 DEBUG  livekit.agents   received user        {"room":             
+                                     transcript           "voice_assistant_roo…
+                                                          "user_transcript":   
+                                                          "voice with mic voice
+                                                          in Windows.",        
+                                                          "language": "en-US", 
+                                                          "transcript_delay":  
+                                                          0.6242167949676514}  
+             DEBUG  livekit.plugins… eou prediction {"room":                   
+                                                    "voice_assistant_room_7181…
+                                                    "eou_probability":         
+                                                    0.1419077068567276,        
+                                                    "duration": 0.24, "input": 
+                                                    "<|im_start|>assistant\nth…
+                                                    a fun thought but as an ai 
+                                                    i don't really have a first
+                                                    day or a last day i'm      
+                                                    always here and ready to   
+                                                    help you whenever you need 
+                                                    me<|im_end|>\n<|im_start|>…
+                                                    bye                        
+                                                    then<|im_end|>\n<|im_start…
+                                                    have a wonderful day i'm   
+                                                    here if you need anything  
+                                                    else<|im_end|>\n<|im_start…
+                                                    this in it how to record   
+                                                    screen with voice with mic 
+                                                    voice in windows"}         
+             INFO   livekit.agents   EOU metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "multilingual", 
+                                                 "model_provider": "livekit",  
+                                                 "end_of_utterance_delay":     
+                                                 1.04, "transcription_delay":  
+                                                 0.63}                         
+             INFO   google_genai.mo… AFC is enabled with  {"room":             
+                                     max remote calls:    "voice_assistant_roo…
+                                     10.                                       
+    00:12:37 INFO   livekit.agents   LLM metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name":                 
+                                                 "gemini-2.5-flash",           
+                                                 "model_provider": "Gemini",   
+                                                 "ttft": 2.1, "prompt_tokens": 
+                                                 514, "prompt_cached_tokens":  
+                                                 0, "completion_tokens": 52,   
+                                                 "tokens_per_second": 24.68}   
+             DEBUG  livekit.agents   sent text to tts {"room":                 
+                                                      "voice_assistant_room_71…
+                                                      "text": "You can use the 
+                                                      built-in Xbox Game Bar in
+                                                      Windows It's super handy 
+                                                      Just press the Windows   
+                                                      key + G to open it Then  
+                                                      click the record button  
+                                                      which looks like a circle
+                                                      with a dot and make sure 
+                                                      your microphone is turned
+                                                      on in the audio widget", 
+                                                      "remaining_audio": 0.0}  
+             INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 5.0}        
+    00:12:42 INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 5.05}       
+    00:12:44 INFO   livekit.agents   TTS metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "FALCON",       
+                                                 "model_provider": "Murf",     
+                                                 "ttfb": 0.4037699999753386,   
+                                                 "audio_duration": 11.44}      
+    00:12:47 INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 5.05}       
+    00:12:52 INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 5.0}        
+    00:12:57 INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 5.0}        
+    00:13:01 DEBUG  livekit.agents   received user        {"room":             
+                                     transcript           "voice_assistant_roo…
+                                                          "user_transcript":   
+                                                          "Just", "language":  
+                                                          "en-US",             
+                                                          "transcript_delay":  
+                                                          0.49491310119628906} 
+             INFO   google_genai.mo… AFC is enabled with  {"room":             
+                                     max remote calls:    "voice_assistant_roo…
+                                     10.                                       
+             DEBUG  livekit.plugins… eou prediction {"room":                   
+                                                    "voice_assistant_room_7181…
+                                                    "eou_probability":         
+                                                    0.00015905530017334968,    
+                                                    "duration": 0.294, "input":
+                                                    "<|im_start|>assistant\ngo…
+                                                    have a wonderful day i'm   
+                                                    here if you need anything  
+                                                    else<|im_end|>\n<|im_start…
+                                                    this in it how to record   
+                                                    screen with voice with mic 
+                                                    voice in                   
+                                                    windows<|im_end|>\n<|im_st…
+                                                    can use the built-in xbox  
+                                                    game bar in windows it's   
+                                                    super handy just press the 
+                                                    windows key + g to open it 
+                                                    then click the record      
+                                                    button which looks like a  
+                                                    circle with a dot and make 
+                                                    sure your microphone is    
+                                                    turned on in the audio     
+                                                    widget<|im_end|>\n<|im_sta…
+    00:13:02 INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 5.0}        
+    00:13:03 INFO   livekit.agents   LLM metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name":                 
+                                                 "gemini-2.5-flash",           
+                                                 "model_provider": "Gemini",   
+                                                 "ttft": 2.01, "prompt_tokens":
+                                                 569, "prompt_cached_tokens":  
+                                                 0, "completion_tokens": 7,    
+                                                 "tokens_per_second": 3.48}    
+             DEBUG  livekit.agents   sent text to tts {"room":                 
+                                                      "voice_assistant_room_71…
+                                                      "text": "Is that helpful 
+                                                      for what you needed",    
+                                                      "remaining_audio": 0.0}  
+             DEBUG  livekit.agents   using preemptive     {"room":             
+                                     generation           "voice_assistant_roo…
+                                                          "preemptive_lead_tim…
+                                                          2.5035250186920166}  
+             INFO   livekit.agents   EOU metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "multilingual", 
+                                                 "model_provider": "livekit",  
+                                                 "end_of_utterance_delay":     
+                                                 3.01, "transcription_delay":  
+                                                 0.5}                          
+    00:13:04 INFO   livekit.agents   TTS metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "FALCON",       
+                                                 "model_provider": "Murf",     
+                                                 "ttfb": 0.6847461999859661,   
+                                                 "audio_duration": 1.92}       
+    00:13:07 INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 5.05}       
+    00:13:12 INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 5.0}        
+    00:13:17 INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 5.0}        
+    00:13:22 INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7181",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 5.0}        
+    00:13:25 DEBUG  livekit.agents   stream closed {"room":                    
+                                                   "voice_assistant_room_7181",
+                                                   "participant":              
+                                                   "voice_assistant_user_4356",
+                                                   "source":                   
+                                                   "SOURCE_MICROPHONE"}        
+             INFO   livekit.agents   closing agent        {"room":             
+                                     session due to       "voice_assistant_roo…
+                                     participant          "participant":       
+                                     disconnect (disable  "voice_assistant_use…
+                                     via                  "reason":            
+                                     `RoomInputOptions.cl "CLIENT_INITIATED"}  
+                                     ose_on_disconnect=Fa                      
+                                     lse`)                                     
+             DEBUG  livekit.agents   input stream         {"room":             
+                                     detached             "voice_assistant_roo…
+                                                          "participant":       
+                                                          "voice_assistant_use…
+                                                          "source":            
+                                                          "SOURCE_UNKNOWN",    
+                                                          "accepted_sources":  
+                                                          ["SOURCE_MICROPHONE"…
+             DEBUG  livekit.agents   session closed {"room":                   
+                                                    "voice_assistant_room_7181…
+                                                    "reason":                  
+                                                    "participant_disconnected",
+                                                    "error": null}             
+  
+thread 'tokio-runtime-worker' panicked at webrtc-sys\src\rtc_error.rs:71:64:
+called `Result::unwrap()` on an `Err` value: ParseIntError { kind: InvalidDigit }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+  00:13:45 DEBUG  livekit.agents   shutting down job    {"room":             
+                                     task                 "voice_assistant_roo…
+                                                          "reason": "",        
+                                                          "user_initiated":    
+                                                          false}               
+             DEBUG  livekit.agents   job exiting {"reason": "", "tid": 30176,  
+                                                 "job_id": "AJ_ZPsdzP8MueKc",  
+                                                 "room_id": "RM_3hik4GhnyxXH"} 
+             INFO   agent            Usage:               {"room":             
+                                     UsageSummary(llm_pro "voice_assistant_roo…
+                                     mpt_tokens=6663,                          
+                                     llm_prompt_cached_to                      
+                                     kens=0,                                   
+                                     llm_input_audio_toke                      
+                                     ns=0,                                     
+                                     llm_input_cached_aud                      
+                                     io_tokens=0,                              
+                                     llm_input_text_token                      
+                                     s=0,                                      
+                                     llm_input_cached_tex                      
+                                     t_tokens=0,                               
+                                     llm_input_image_toke                      
+                                     ns=0,                                     
+                                     llm_input_cached_ima                      
+                                     ge_tokens=0,                              
+                                     llm_completion_token                      
+                                     s=419,                                    
+                                     llm_output_audio_tok                      
+                                     ens=0,                                    
+                                     llm_output_image_tok                      
+                                     ens=0,                                    
+                                     llm_output_text_toke                      
+                                     ns=0,                                     
+                                     tts_characters_count                      
+                                     =1522,                                    
+                                     tts_audio_duration=9                      
+                                     0.8,                                      
+                                     stt_audio_duration=3                      
+                                     26.2999999999995)                         
+             DEBUG  livekit.agents   http_session():      {"room":             
+                                     closing the          "voice_assistant_roo…
+                                     httpclient ctx                            
+    00:21:04 INFO   livekit.agents   received job request {"job_id":           
+                                                          "AJ_WH65FDegnNL2",   
+                                                          "dispatch_id":       
+                                                          "AD_hE3pYrgb2LQk",   
+                                                          "room":              
+                                                          "voice_assistant_roo…
+                                                          "room_id":           
+                                                          "RM_YB3oFjiWZXxb",   
+                                                          "agent_name": "",    
+                                                          "resuming": false,   
+                                                          "enable_recording":  
+                                                          false}               
+             DEBUG  livekit.agents   received assignment {"agent_name": "",    
+                                                         "room_id":            
+                                                         "RM_YB3oFjiWZXxb",    
+                                                         "room":               
+                                                         "voice_assistant_room…
+                                                         "job_id":             
+                                                         "AJ_WH65FDegnNL2",    
+                                                         "dispatch_id":        
+                                                         "AD_hE3pYrgb2LQk",    
+                                                         "enable_recording":   
+                                                         false}                
+             INFO   livekit.agents   initializing job runner {"tid": 24796}
+    00:21:05 INFO   livekit.agents   job runner           {"tid": 24796,       
+                                     initialized          "elapsed_time": 0.39}
+             DEBUG  asyncio          Using proactor: IocpProactor  
+    00:21:07 WARNI… livekit.agents   RoomInputOptions and {"room":             
+                                     RoomOutputOptions    "voice_assistant_roo…
+                                     are deprecated, use                       
+                                     RoomOptions instead                       
+             DEBUG  livekit.agents   input stream         {"room":             
+                                     attached             "voice_assistant_roo…
+                                                          "participant": null, 
+                                                          "source":            
+                                                          "SOURCE_UNKNOWN",    
+                                                          "accepted_sources":  
+                                                          ["SOURCE_MICROPHONE"…
+    00:21:08 DEBUG  livekit.agents   http_session():      {"room":             
+                                     creating a new       "voice_assistant_roo…
+                                     httpclient ctx                            
+error: failed to fetch server settings: http status: 404
+             DEBUG  livekit.agents   using audio io:      {"room":             
+                                     `RoomIO` ->          "voice_assistant_roo…
+                                     `AgentSession` ->                         
+                                     `TranscriptSynchroni                      
+                                     zer` -> `RoomIO`                          
+             DEBUG  livekit.agents   using transcript io: {"room":             
+                                     `AgentSession` ->    "voice_assistant_roo…
+                                     `TranscriptSynchroni                      
+                                     zer` -> `RoomIO`                          
+             ERROR  livekit          livekit_ffi::server::room:149:livekit_ff  
+                                     i::server::room - audio filter cannot be  
+                                     enabled: LiveKit Cloud is required        
+not authenticated
+             DEBUG  livekit.agents   start reading stream {"room":             
+                                                          "voice_assistant_roo…
+                                                          "participant":       
+                                                          "voice_assistant_use…
+                                                          "source":            
+                                                          "SOURCE_MICROPHONE"} 
+             ERROR  livekit          livekit_ffi::server::audio_stream:123:li  
+                                     vekit_ffi::server::audio_stream - failed  
+                                     to initialize the audio filter. it will   
+                                     not be enabled for this session.          
+             DEBUG  livekit.plugins… Established new      {"room":             
+                                     Deepgram STT         "voice_assistant_roo…
+                                     WebSocket            "headers":           
+                                     connection:          {"dg-project-id":    
+                                                          "3c4e9180-658f-4f83-…
+                                                          "dg-request-id":     
+                                                          "5ffd45f3-3312-4f57-…
+                                                          "Date": "Fri, 21 Nov 
+                                                          2025 18:51:08 GMT"}} 
+    00:21:10 DEBUG  livekit.agents   received user        {"room":             
+                                     transcript           "voice_assistant_roo…
+                                                          "user_transcript":   
+                                                          "Hello.", "language":
+                                                          "en-US",             
+                                                          "transcript_delay":  
+                                                          0.5752923488616943}  
+             INFO   google_genai.mo… AFC is enabled with  {"room":             
+                                     max remote calls:    "voice_assistant_roo…
+                                     10.                                       
+             DEBUG  livekit.plugins… eou prediction {"room":                   
+                                                    "voice_assistant_room_7233…
+                                                    "eou_probability":         
+                                                    0.19565783441066742,       
+                                                    "duration": 0.183, "input":
+                                                    "<|im_start|>user\nhello"} 
+             DEBUG  livekit.agents   using preemptive     {"room":             
+                                     generation           "voice_assistant_roo…
+                                                          "preemptive_lead_tim…
+                                                          0.22259140014648438} 
+             INFO   livekit.agents   EOU metrics {"room":                      
+                                                 "voice_assistant_room_7233",  
+                                                 "model_name": "multilingual", 
+                                                 "model_provider": "livekit",  
+                                                 "end_of_utterance_delay":     
+                                                 0.81, "transcription_delay":  
+                                                 0.58}                         
+    00:21:11 INFO   livekit.agents   LLM metrics {"room":                      
+                                                 "voice_assistant_room_7233",  
+                                                 "model_name":                 
+                                                 "gemini-2.5-flash",           
+                                                 "model_provider": "Gemini",   
+                                                 "ttft": 1.16, "prompt_tokens":
+                                                 90, "prompt_cached_tokens": 0,
+                                                 "completion_tokens": 9,       
+                                                 "tokens_per_second": 7.72}    
+             DEBUG  livekit.agents   sent text to tts {"room":                 
+                                                      "voice_assistant_room_72…
+                                                      "text": "Well hello there
+                                                      how can I help you       
+                                                      today",                  
+                                                      "remaining_audio": 0.0}  
+    00:21:13 INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7233",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 4.75}       
+             INFO   livekit.agents   TTS metrics {"room":                      
+                                                 "voice_assistant_room_7233",  
+                                                 "model_name": "FALCON",       
+                                                 "model_provider": "Murf",     
+                                                 "ttfb": 0.38215459999628365,  
+                                                 "audio_duration": 2.72}       
+    00:21:18 INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7233",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 5.05}       
+    00:21:21 DEBUG  livekit.agents   received user        {"room":             
+                                     transcript           "voice_assistant_roo…
+                                                          "user_transcript":   
+                                                          "What are the tasks  
+                                                          that can be done by  
+                                                          you?", "language":   
+                                                          "en-US",             
+                                                          "transcript_delay":  
+                                                          0.6698713302612305}  
+             INFO   google_genai.mo… AFC is enabled with  {"room":             
+                                     max remote calls:    "voice_assistant_roo…
+                                     10.                                       
+    00:21:22 DEBUG  livekit.plugins… eou prediction {"room":                   
+                                                    "voice_assistant_room_7233…
+                                                    "eou_probability":         
+                                                    0.8014732003211975,        
+                                                    "duration": 0.129, "input":
+                                                    "<|im_start|>user\nhello<|…
+                                                    hello there how can i help 
+                                                    you                        
+                                                    today<|im_end|>\n<|im_star…
+                                                    are the tasks that can be  
+                                                    done by you"}              
+             DEBUG  livekit.agents   using preemptive     {"room":             
+                                     generation           "voice_assistant_roo…
+                                                          "preemptive_lead_tim…
+                                                          0.14762449264526367} 
+             INFO   livekit.agents   EOU metrics {"room":                      
+                                                 "voice_assistant_room_7233",  
+                                                 "model_name": "multilingual", 
+                                                 "model_provider": "livekit",  
+                                                 "end_of_utterance_delay":     
+                                                 0.82, "transcription_delay":  
+                                                 0.68}                         
+             INFO   livekit.agents   LLM metrics {"room":                      
+                                                 "voice_assistant_room_7233",  
+                                                 "model_name":                 
+                                                 "gemini-2.5-flash",           
+                                                 "model_provider": "Gemini",   
+                                                 "ttft": 0.96, "prompt_tokens":
+                                                 112, "prompt_cached_tokens":  
+                                                 0, "completion_tokens": 27,   
+                                                 "tokens_per_second": 24.66}   
+             DEBUG  livekit.agents   sent text to tts {"room":                 
+                                                      "voice_assistant_room_72…
+                                                      "text": "That's a great  
+                                                      question I can answer    
+                                                      your questions provide   
+                                                      information summarize    
+                                                      topics or even help you  
+                                                      brainstorm ideas What are
+                                                      you curious about today",
+                                                      "remaining_audio": 0.0}  
+    00:21:23 INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7233",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 5.0}        
+    00:21:28 INFO   livekit.agents   TTS metrics {"room":                      
+                                                 "voice_assistant_room_7233",  
+                                                 "model_name": "FALCON",       
+                                                 "model_provider": "Murf",     
+                                                 "ttfb": 0.3858244000002742,   
+                                                 "audio_duration": 7.92}       
+             INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7233",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 5.0}        
+    00:21:33 INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7233",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 5.05}       
+    00:21:38 INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7233",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 5.0}        
+             DEBUG  livekit.agents   received user        {"room":             
+                                     transcript           "voice_assistant_roo…
+                                                          "user_transcript":   
+                                                          "Can I do current    
+                                                          guidance for the     
+                                                          students?",          
+                                                          "language": "en-US", 
+                                                          "transcript_delay":  
+                                                          0.7491626739501953}  
+             INFO   google_genai.mo… AFC is enabled with  {"room":             
+                                     max remote calls:    "voice_assistant_roo…
+                                     10.                                       
+             DEBUG  livekit.plugins… eou prediction {"room":                   
+                                                    "voice_assistant_room_7233…
+                                                    "eou_probability":         
+                                                    0.3816029131412506,        
+                                                    "duration": 0.263, "input":
+                                                    "<|im_start|>user\nhello<|…
+                                                    hello there how can i help 
+                                                    you                        
+                                                    today<|im_end|>\n<|im_star…
+                                                    are the tasks that can be  
+                                                    done by                    
+                                                    you<|im_end|>\n<|im_start|…
+                                                    a great question i can     
+                                                    answer your questions      
+                                                    provide information        
+                                                    summarize topics or even   
+                                                    help you brainstorm ideas  
+                                                    what are you curious about 
+                                                    today<|im_end|>\n<|im_star…
+                                                    i do current guidance for  
+                                                    the students"}             
+             DEBUG  livekit.agents   using preemptive     {"room":             
+                                     generation           "voice_assistant_roo…
+                                                          "preemptive_lead_tim…
+                                                          0.2860603332519531}  
+             INFO   livekit.agents   EOU metrics {"room":                      
+                                                 "voice_assistant_room_7233",  
+                                                 "model_name": "multilingual", 
+                                                 "model_provider": "livekit",  
+                                                 "end_of_utterance_delay":     
+                                                 1.04, "transcription_delay":  
+                                                 0.75}                         
+    00:21:42 INFO   livekit.agents   LLM metrics {"room":                      
+                                                 "voice_assistant_room_7233",  
+                                                 "model_name":                 
+                                                 "gemini-2.5-flash",           
+                                                 "model_provider": "Gemini",   
+                                                 "ttft": 4.33, "prompt_tokens":
+                                                 150, "prompt_cached_tokens":  
+                                                 0, "completion_tokens": 36,   
+                                                 "tokens_per_second": 8.31}    
+             DEBUG  livekit.agents   sent text to tts {"room":                 
+                                                      "voice_assistant_room_72…
+                                                      "text": "Yes I can       
+                                                      definitely help with     
+                                                      guidance for students I  
+                                                      can provide information  
+                                                      explain difficult        
+                                                      concepts and offer       
+                                                      insights on a wide range 
+                                                      of academic topics and   
+                                                      questions What kind of   
+                                                      guidance are you thinking
+                                                      of", "remaining_audio":  
+                                                      0.0}                     
+    00:21:43 INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7233",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 5.05}       
+    00:21:44 DEBUG  livekit.agents   received user        {"room":             
+                                     transcript           "voice_assistant_roo…
+                                                          "user_transcript":   
+                                                          "Can you do",        
+                                                          "language": "en-US", 
+                                                          "transcript_delay":  
+                                                          0.5483653545379639}  
+             DEBUG  livekit.plugins… eou prediction {"room":                   
+                                                    "voice_assistant_room_7233…
+                                                    "eou_probability":         
+                                                    0.0034653865732252598,     
+                                                    "duration": 0.253, "input":
+                                                    "<|im_start|>user\nhello<|…
+                                                    hello there how can i help 
+                                                    you                        
+                                                    today<|im_end|>\n<|im_star…
+                                                    are the tasks that can be  
+                                                    done by                    
+                                                    you<|im_end|>\n<|im_start|…
+                                                    a great question i can     
+                                                    answer your questions      
+                                                    provide information        
+                                                    summarize topics or even   
+                                                    help you brainstorm ideas  
+                                                    what are you curious about 
+                                                    today<|im_end|>\n<|im_star…
+                                                    i do current guidance for  
+                                                    the students can you do"}  
+    00:21:46 INFO   livekit.agents   EOU metrics {"room":                      
+                                                 "voice_assistant_room_7233",  
+                                                 "model_name": "multilingual", 
+                                                 "model_provider": "livekit",  
+                                                 "end_of_utterance_delay":     
+                                                 3.01, "transcription_delay":  
+                                                 0.56}                         
+             INFO   google_genai.mo… AFC is enabled with  {"room":             
+                                     max remote calls:    "voice_assistant_roo…
+                                     10.                                       
+    00:21:48 INFO   livekit.agents   STT metrics {"room":                      
+                                                 "voice_assistant_room_7233",  
+                                                 "model_name": "nova-3",       
+                                                 "model_provider": "Deepgram", 
+                                                 "audio_duration": 5.0}        
+    00:21:49 INFO   livekit.agents   LLM metrics {"room":                      
+                                                 "voice_assistant_room_7233",  
+                                                 "model_name":                 
+                                                 "gemini-2.5-flash",           
+                                                 "model_provider": "Gemini",   
+                                                 "ttft": 2.45, "prompt_tokens":
+                                                 158, "prompt_cached_tokens":  
+                                                 0, "completion_tokens": 19,   
+                                                 "tokens_per_second": 7.74}    
+             DEBUG  livekit.agents   sent text to tts {"room":                 
+                                                      "voice_assistant_room_72…
+                                                      "text": "Absolutely To   
+                                                      help me provide the best 
+                                                      guidance what specific   
+                                                      area or topic are you    
+                                                      interested in for        
+                                                      students",               
+                                                      "remaining_audio": 0.0}  
+    00:21:51 DEBUG  livekit.agents   stream closed {"room":                    
+                                                   "voice_assistant_room_7233",
+                                                   "participant":              
+                                                   "voice_assistant_user_7452",
+                                                   "source":                   
+                                                   "SOURCE_MICROPHONE"}        
+             INFO   livekit.agents   closing agent        {"room":             
+                                     session due to       "voice_assistant_roo…
+                                     participant          "participant":       
+                                     disconnect (disable  "voice_assistant_use…
+                                     via                  "reason":            
+                                     `RoomInputOptions.cl "CLIENT_INITIATED"}  
+                                     ose_on_disconnect=Fa                      
+                                     lse`)                                     
+             DEBUG  livekit.agents   input stream         {"room":             
+                                     detached             "voice_assistant_roo…
+                                                          "participant":       
+                                                          "voice_assistant_use…
+                                                          "source":            
+                                                          "SOURCE_UNKNOWN",    
+                                                          "accepted_sources":  
+                                                          ["SOURCE_MICROPHONE"…
+             DEBUG  livekit.agents   session closed {"room":                   
+                                                    "voice_assistant_room_7233…
+                                                    "reason":                  
+                                                    "participant_disconnected",
+                                                    "error": null}             
+    00:22:11
+thread 'tokio-runtime-worker' panicked at webrtc-sys\src\rtc_error.rs:71:64:
+called `Result::unwrap()` on an `Err` value: ParseIntError { kind: InvalidDigit }
+ DEBUG  livekit.agents   shutting down job    {"room":             
+                                     task                 "voice_assistant_roo…
+                                                          "reason": "",        
+                                                          "user_initiated":    
+                                                          false}               
+             DEBUG  livekit.agents   job exiting {"reason": "", "tid": 24796,  
+                                                 "job_id": "AJ_WH65FDegnNL2",  
+                                                 "room_id": "RM_YB3oFjiWZXxb"} 
+             INFO   agent            Usage:               {"room":             
+                                     UsageSummary(llm_pro "voice_assistant_roo…
+                                     mpt_tokens=510,                           
+                                     llm_prompt_cached_to                      
+                                     kens=0,                                   
+                                     llm_input_audio_toke                      
+                                     ns=0,                                     
+                                     llm_input_cached_aud                      
+                                     io_tokens=0,                              
+                                     llm_input_text_token                      
+                                     s=0,                                      
+                                     llm_input_cached_tex                      
+                                     t_tokens=0,                               
+                                     llm_input_image_toke                      
+                                     ns=0,                                     
+                                     llm_input_cached_ima                      
+                                     ge_tokens=0,                              
+                                     llm_completion_token                      
+                                     s=91,                                     
+                                     llm_output_audio_tok                      
+                                     ens=0,                                    
+                                     llm_output_image_tok                      
+                                     ens=0,                                    
+                                     llm_output_text_toke                      
+                                     ns=0,                                     
+                                     tts_characters_count                      
+                                     =196,                                     
+                                     tts_audio_duration=1                      
+                                     0.640000000000004,                        
+                                     stt_audio_duration=3                      
+                                     9.89999999999993)                         
+             DEBUG  livekit.agents   http_session():      {"room":             
+                                     closing the          "voice_assistant_roo…
+                                     httpclient ctx                            
