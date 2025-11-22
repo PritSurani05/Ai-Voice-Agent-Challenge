@@ -46,6 +46,8 @@ const MESSAGE_MOTION_PROPS = {
       translateY: 0,
     },
   },
+  initial: 'visible', // Start visible instead of hidden
+  animate: 'visible', // Always animate to visible
 };
 
 interface ChatTranscriptProps {

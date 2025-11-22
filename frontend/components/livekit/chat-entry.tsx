@@ -34,6 +34,7 @@ export const ChatEntry = ({
       title={title}
       data-lk-message-origin={messageOrigin}
       className={cn('group flex w-full flex-col gap-0.5', className)}
+      style={{ opacity: 1, visibility: 'visible' }}
       {...props}
     >
       <header
@@ -51,8 +52,23 @@ export const ChatEntry = ({
       <span
         className={cn(
           'max-w-4/5 rounded-[20px]',
-          messageOrigin === 'local' ? 'bg-muted ml-auto p-2' : 'mr-auto'
+          messageOrigin === 'local' 
+            ? 'ml-auto p-2' 
+            : 'mr-auto p-2'
         )}
+        style={{ 
+          color: '#faf5ff',
+          opacity: 1,
+          visibility: 'visible',
+          display: 'block',
+          backgroundColor: messageOrigin === 'local' 
+            ? 'rgba(139, 92, 246, 0.25)' // Purple tint for user messages
+            : 'rgba(167, 139, 250, 0.2)', // Lighter purple for agent messages
+          backdropFilter: 'blur(8px)',
+          WebkitBackdropFilter: 'blur(8px)',
+          border: '1px solid rgba(139, 92, 246, 0.3)',
+          boxShadow: '0 4px 12px rgba(139, 92, 246, 0.15)'
+        }}
       >
         {message}
       </span>

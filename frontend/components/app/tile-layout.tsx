@@ -2,7 +2,6 @@ import React, { useMemo } from 'react';
 import { Track } from 'livekit-client';
 import { AnimatePresence, motion } from 'motion/react';
 import {
-  BarVisualizer,
   type TrackReference,
   VideoTrack,
   useLocalParticipant,
@@ -10,14 +9,16 @@ import {
   useVoiceAssistant,
 } from '@livekit/components-react';
 import { cn } from '@/lib/utils';
+import { WaveVisualizer } from './wave-visualizer';
+import type { OrderDetails } from './order-receipt';
 
 const MotionContainer = motion.create('div');
 
 const ANIMATION_TRANSITION = {
   type: 'spring',
-  stiffness: 675,
-  damping: 75,
-  mass: 1,
+  stiffness: 300,
+  damping: 30,
+  mass: 0.8,
 };
 
 const classNames = {
@@ -71,9 +72,10 @@ export function useLocalTrackRef(source: Track.Source) {
 
 interface TileLayoutProps {
   chatOpen: boolean;
+  orderDetails?: OrderDetails | null;
 }
 
-export function TileLayout({ chatOpen }: TileLayoutProps) {
+export function TileLayout({ chatOpen, orderDetails }: TileLayoutProps) {
   const {
     state: agentState,
     audioTrack: agentAudioTrack,
@@ -103,45 +105,55 @@ export function TileLayout({ chatOpen }: TileLayoutProps) {
               chatOpen && hasSecondTile && classNames.agentChatOpenWithSecondTile,
               chatOpen && !hasSecondTile && classNames.agentChatOpenWithoutSecondTile,
             ])}
+            style={{ 
+              minHeight: chatOpen ? '90px' : '200px',
+              height: chatOpen ? '90px' : 'auto',
+            }}
           >
-            <AnimatePresence mode="popLayout">
-              {!isAvatar && (
-                // Audio Agent
+             <AnimatePresence mode="popLayout">
+               {/* Receipt is shown separately on the left, so don't show it here */}
+               {!isAvatar && (
+                // Audio Agent - Large centered wave
                 <MotionContainer
                   key="agent"
                   layoutId="agent"
                   initial={{
                     opacity: 0,
-                    scale: 0,
+                    y: 20,
                   }}
                   animate={{
                     opacity: 1,
-                    scale: chatOpen ? 1 : 5,
+                    y: 0,
                   }}
                   transition={{
                     ...ANIMATION_TRANSITION,
                     delay: animationDelay,
                   }}
+                  layout
                   className={cn(
-                    'bg-background aspect-square h-[90px] rounded-md border border-transparent transition-[border,drop-shadow]',
-                    chatOpen && 'border-input/50 drop-shadow-lg/10 delay-200'
+                    'w-full flex items-center justify-center',
+                    chatOpen ? 'h-[90px]' : 'h-[200px] md:h-[250px]'
                   )}
+                  style={{ 
+                    height: chatOpen ? '90px' : '200px',
+                    minHeight: chatOpen ? '90px' : '200px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  }}
                 >
-                  <BarVisualizer
-                    barCount={5}
-                    state={agentState}
-                    options={{ minHeight: 5 }}
-                    trackRef={agentAudioTrack}
-                    className={cn('flex h-full items-center justify-center gap-1')}
-                  >
-                    <span
-                      className={cn([
-                        'bg-muted min-h-2.5 w-2.5 rounded-full',
-                        'origin-center transition-colors duration-250 ease-linear',
-                        'data-[lk-highlighted=true]:bg-foreground data-[lk-muted=true]:bg-muted',
-                      ])}
-                    />
-                  </BarVisualizer>
+                  <WaveVisualizer />
+                </MotionContainer>
+              )}
+              
+              {/* Always show wave visualizer even if avatar exists, but hidden */}
+              {isAvatar && (
+                <MotionContainer
+                  key="wave-fallback"
+                  layoutId="wave-fallback"
+                  className="hidden"
+                >
+                  <WaveVisualizer />
                 </MotionContainer>
               )}
 
@@ -151,31 +163,21 @@ export function TileLayout({ chatOpen }: TileLayoutProps) {
                   key="avatar"
                   layoutId="avatar"
                   initial={{
-                    scale: 1,
-                    opacity: 1,
-                    maskImage:
-                      'radial-gradient(circle, rgba(0, 0, 0, 1) 0, rgba(0, 0, 0, 1) 20px, transparent 20px)',
-                    filter: 'blur(20px)',
+                    opacity: 0,
+                    y: 20,
                   }}
                   animate={{
-                    maskImage:
-                      'radial-gradient(circle, rgba(0, 0, 0, 1) 0, rgba(0, 0, 0, 1) 500px, transparent 500px)',
-                    filter: 'blur(0px)',
-                    borderRadius: chatOpen ? 6 : 12,
+                    opacity: 1,
+                    y: 0,
                   }}
                   transition={{
                     ...ANIMATION_TRANSITION,
                     delay: animationDelay,
-                    maskImage: {
-                      duration: 1,
-                    },
-                    filter: {
-                      duration: 1,
-                    },
                   }}
+                  layout
                   className={cn(
-                    'overflow-hidden bg-black drop-shadow-xl/80',
-                    chatOpen ? 'h-[90px]' : 'h-auto w-full'
+                    'overflow-hidden bg-black drop-shadow-xl/80 rounded-2xl',
+                    chatOpen ? 'h-[90px] w-[90px]' : 'h-auto w-full'
                   )}
                 >
                   <VideoTrack
@@ -205,15 +207,18 @@ export function TileLayout({ chatOpen }: TileLayoutProps) {
                   layoutId="camera"
                   initial={{
                     opacity: 0,
-                    scale: 0,
+                    y: 20,
+                    x: 20,
                   }}
                   animate={{
                     opacity: 1,
-                    scale: 1,
+                    y: 0,
+                    x: 0,
                   }}
                   exit={{
                     opacity: 0,
-                    scale: 0,
+                    y: 20,
+                    x: 20,
                   }}
                   transition={{
                     ...ANIMATION_TRANSITION,

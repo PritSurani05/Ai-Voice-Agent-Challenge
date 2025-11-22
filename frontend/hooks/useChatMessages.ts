@@ -28,10 +28,30 @@ export function useChatMessages() {
   const transcriptions: TextStreamData[] = useTranscriptions();
 
   const mergedTranscriptions = useMemo(() => {
+    // Group transcriptions by stream ID and keep only the latest (most complete) version of each stream
+    const transcriptionMap = new Map<string, ReceivedChatMessage>();
+    
+    transcriptions.forEach((transcription) => {
+      const message = transcriptionToChatMessage(transcription, room);
+      const streamId = message.id;
+      
+      // Keep the most complete version of each stream
+      // Prefer longer text (more complete) or same length with later timestamp
+      const existing = transcriptionMap.get(streamId);
+      if (!existing || 
+          message.message.length > existing.message.length ||
+          (message.message.length === existing.message.length && message.timestamp >= existing.timestamp)) {
+        transcriptionMap.set(streamId, message);
+      }
+    });
+
+    // Convert map values to array and merge with chat messages
     const merged: Array<ReceivedChatMessage> = [
-      ...transcriptions.map((transcription) => transcriptionToChatMessage(transcription, room)),
+      ...Array.from(transcriptionMap.values()),
       ...chat.chatMessages,
     ];
+    
+    // Sort by timestamp
     return merged.sort((a, b) => a.timestamp - b.timestamp);
   }, [transcriptions, chat.chatMessages, room]);
 

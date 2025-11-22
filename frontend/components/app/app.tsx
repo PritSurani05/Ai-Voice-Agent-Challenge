@@ -5,6 +5,7 @@ import type { AppConfig } from '@/app-config';
 import { SessionProvider } from '@/components/app/session-provider';
 import { ViewController } from '@/components/app/view-controller';
 import { Toaster } from '@/components/livekit/toaster';
+import { ErrorBoundary } from '@/components/app/error-boundary';
 
 interface AppProps {
   appConfig: AppConfig;
@@ -12,13 +13,15 @@ interface AppProps {
 
 export function App({ appConfig }: AppProps) {
   return (
-    <SessionProvider appConfig={appConfig}>
-      <main className="grid h-svh grid-cols-1 place-content-center">
-        <ViewController />
-      </main>
-      <StartAudio label="Start Audio" />
-      <RoomAudioRenderer />
-      <Toaster />
-    </SessionProvider>
+    <ErrorBoundary>
+      <SessionProvider appConfig={appConfig}>
+        <main className="zepto-gradient min-h-screen w-full overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+          <ViewController />
+        </main>
+        <StartAudio label="Start Audio" />
+        <RoomAudioRenderer />
+        <Toaster />
+      </SessionProvider>
+    </ErrorBoundary>
   );
 }
