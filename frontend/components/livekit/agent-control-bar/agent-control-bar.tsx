@@ -1,8 +1,8 @@
 'use client';
 
-import { type HTMLAttributes, useCallback, useState } from 'react';
+import { type HTMLAttributes, useCallback, useEffect, useState } from 'react';
 import { Track } from 'livekit-client';
-import { useChat, useRemoteParticipants } from '@livekit/components-react';
+import { useChat, useRemoteParticipants, useRoomContext } from '@livekit/components-react';
 import { ChatTextIcon, PhoneDisconnectIcon } from '@phosphor-icons/react/dist/ssr';
 import { useSession } from '@/components/app/session-provider';
 import { TrackToggle } from '@/components/livekit/agent-control-bar/track-toggle';
@@ -83,13 +83,39 @@ export function AgentControlBar({
     chat: controls?.chat ?? publishPermissions.data,
   };
 
+  // Check if agent is available - allow chat even if agent isn't detected yet (it might be connecting)
   const isAgentAvailable = participants.some((p) => p.isAgent);
+  // Also allow chat if room is connected (agent might be joining)
+  const room = useRoomContext();
+  const roomConnected = room?.state === 'connected';
+  
+  // Debug logging for agent detection
+  useEffect(() => {
+    if (isSessionActive) {
+      console.log('Agent detection:', {
+        roomState: room?.state,
+        roomConnected,
+        participantsCount: participants.length,
+        participants: participants.map(p => ({
+          identity: p.identity,
+          name: p.name,
+          isAgent: p.isAgent,
+          sid: p.sid,
+        })),
+        isAgentAvailable,
+        // Allow chat if room is connected even if agent isn't detected yet
+        allowChat: isAgentAvailable || roomConnected,
+      });
+    }
+  }, [participants, isAgentAvailable, isSessionActive, roomConnected, room]);
 
   return (
     <div
       aria-label="Voice assistant controls"
       className={cn(
-        'bg-background border-input/50 dark:border-muted flex flex-col rounded-[31px] border p-3 drop-shadow-md/3',
+        'glass-card flex flex-col rounded-2xl border-2 border-purple-500/30 p-4 backdrop-blur-xl',
+        'hover:border-purple-400/40 transition-all duration-300',
+        'shadow-[0_8px_32px_rgba(0,0,0,0.3),0_0_0_1px_rgba(139,92,246,0.1)]',
         className
       )}
       {...props}
@@ -98,7 +124,7 @@ export function AgentControlBar({
       {visibleControls.chat && (
         <ChatInput
           chatOpen={chatOpen}
-          isAgentAvailable={isAgentAvailable}
+          isAgentAvailable={isAgentAvailable || roomConnected}
           onSend={handleSendMessage}
         />
       )}

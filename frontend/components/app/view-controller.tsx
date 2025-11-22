@@ -38,7 +38,7 @@ export function ViewController() {
 
   // disconnect room after animation completes
   const handleAnimationComplete = () => {
-    if (!isSessionActiveRef.current && room.state !== 'disconnected') {
+    if (room && !isSessionActiveRef.current && room.state !== 'disconnected') {
       room.disconnect();
     }
   };

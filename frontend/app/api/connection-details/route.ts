@@ -19,14 +19,27 @@ export const revalidate = 0;
 
 export async function POST(req: Request) {
   try {
+    // Better error messages
     if (LIVEKIT_URL === undefined) {
-      throw new Error('LIVEKIT_URL is not defined');
+      console.error('LIVEKIT_URL is not defined in environment variables');
+      return NextResponse.json(
+        { error: 'LIVEKIT_URL is not defined. Please check your .env.local file.' },
+        { status: 500 }
+      );
     }
     if (API_KEY === undefined) {
-      throw new Error('LIVEKIT_API_KEY is not defined');
+      console.error('LIVEKIT_API_KEY is not defined in environment variables');
+      return NextResponse.json(
+        { error: 'LIVEKIT_API_KEY is not defined. Please check your .env.local file.' },
+        { status: 500 }
+      );
     }
     if (API_SECRET === undefined) {
-      throw new Error('LIVEKIT_API_SECRET is not defined');
+      console.error('LIVEKIT_API_SECRET is not defined in environment variables');
+      return NextResponse.json(
+        { error: 'LIVEKIT_API_SECRET is not defined. Please check your .env.local file.' },
+        { status: 500 }
+      );
     }
 
     // Parse agent configuration from request body
@@ -57,9 +70,16 @@ export async function POST(req: Request) {
     return NextResponse.json(data, { headers });
   } catch (error) {
     if (error instanceof Error) {
-      console.error(error);
-      return new NextResponse(error.message, { status: 500 });
+      console.error('Error in connection-details route:', error);
+      return NextResponse.json(
+        { error: error.message, details: error.stack },
+        { status: 500 }
+      );
     }
+    return NextResponse.json(
+      { error: 'Unknown error occurred' },
+      { status: 500 }
+    );
   }
 }
 

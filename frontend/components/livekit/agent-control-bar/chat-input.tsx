@@ -52,13 +52,15 @@ export function ChatInput({
     }
   };
 
+  // Allow typing even if agent isn't detected yet, but disable send button
   const isDisabled = isSending || !isAgentAvailable || message.trim().length === 0;
 
   useEffect(() => {
-    if (chatOpen && isAgentAvailable) return;
-    // when not disabled refocus on input
-    inputRef.current?.focus();
-  }, [chatOpen, isAgentAvailable]);
+    if (chatOpen) {
+      // Focus input when chat opens
+      inputRef.current?.focus();
+    }
+  }, [chatOpen]);
 
   return (
     <motion.div
@@ -77,7 +79,7 @@ export function ChatInput({
           type="text"
           value={message}
           disabled={!chatOpen}
-          placeholder="Type something..."
+          placeholder={isAgentAvailable ? "Type something..." : "Waiting for agent..."}
           onChange={(e) => setMessage(e.target.value)}
           className="h-8 flex-1 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50"
         />
