@@ -1,5 +1,21 @@
 #!/bin/bash
 
+# Usage: ./start_app.sh [day]
+#   day: 1, 2, or 3 (defaults to 2 if not specified)
+
+# Get day parameter (default to 2)
+AGENT_DAY=${1:-2}
+
+# Validate day parameter
+if [ "$AGENT_DAY" != "1" ] && [ "$AGENT_DAY" != "2" ] && [ "$AGENT_DAY" != "3" ]; then
+    echo "Invalid day parameter: $AGENT_DAY"
+    echo "Usage: ./start_app.sh [1|2|3]"
+    echo "Defaulting to Day 2..."
+    AGENT_DAY=2
+fi
+
+echo "Starting services for Day $AGENT_DAY agent..."
+
 # Source uv environment if available
 if [ -f "$HOME/.local/bin/env" ]; then
     source "$HOME/.local/bin/env"
@@ -25,20 +41,25 @@ echo "Starting LiveKit server..."
 livekit-server --dev &
 LIVEKIT_PID=$!
 
-echo "Starting backend agent..."
-(cd backend && uv run python src/agent.py dev) &
+sleep 2
+
+echo "Starting backend agent (Day $AGENT_DAY)..."
+(cd backend && AGENT_DAY=$AGENT_DAY uv run python src/agent.py dev) &
 BACKEND_PID=$!
 
+sleep 2
+
 echo "Starting frontend..."
-(cd frontend && pnpm dev) &
+(cd frontend && NEXT_PUBLIC_AGENT_DAY=$AGENT_DAY pnpm dev) &
 FRONTEND_PID=$!
 
 echo ""
 echo "All services started!"
 echo "  - LiveKit server: PID $LIVEKIT_PID (port 7880)"
-echo "  - Backend agent: PID $BACKEND_PID"
-echo "  - Frontend: PID $FRONTEND_PID (port 3000)"
+echo "  - Backend agent: PID $BACKEND_PID (Day $AGENT_DAY)"
+echo "  - Frontend: PID $FRONTEND_PID (port 3000, Day $AGENT_DAY)"
 echo ""
+echo "Access the app at: http://localhost:3000"
 echo "Press Ctrl+C to stop all services"
 
 # Wait for all background jobs

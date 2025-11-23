@@ -259,6 +259,40 @@
       0 0 60px rgba(236, 72, 153, 0.1);
   }
 
+  /* Apollo Pharmacy gradient background - Blue/Teal theme */
+  .apollo-gradient {
+    background: linear-gradient(135deg, #0a1628 0%, #1e3a5f 25%, #1e40af 50%, #0e7490 75%, #0a1628 100%);
+    background-size: 400% 400%;
+    animation: gradient-shift 15s ease infinite;
+    position: relative;
+  }
+
+  .apollo-gradient::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: 
+      radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.3) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(20, 184, 166, 0.2) 0%, transparent 50%),
+      radial-gradient(circle at 40% 20%, rgba(6, 182, 212, 0.15) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  /* Apollo Pharmacy glow effects */
+  .glow-blue {
+    box-shadow: 
+      0 0 20px rgba(59, 130, 246, 0.4),
+      0 0 40px rgba(59, 130, 246, 0.2),
+      0 0 60px rgba(59, 130, 246, 0.1);
+  }
+
+  .glow-teal {
+    box-shadow: 
+      0 0 20px rgba(20, 184, 166, 0.5),
+      0 0 40px rgba(20, 184, 166, 0.3),
+      0 0 60px rgba(20, 184, 166, 0.1);
+  }
+
   /* Coffee bean animation */
   @keyframes bean-rotate {
     0% {

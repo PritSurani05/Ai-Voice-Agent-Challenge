@@ -139,8 +139,11 @@ export const SessionView = ({
     }
   }, [isSessionActive, room]);
 
+  const agentDay = process.env.NEXT_PUBLIC_AGENT_DAY || '2';
+  const gradientClass = agentDay === '3' ? 'apollo-gradient' : 'zepto-gradient';
+  
   return (
-    <section className="zepto-gradient relative z-10 h-full w-full overflow-hidden [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]" {...props}>
+    <section className={`${gradientClass} relative z-10 h-full w-full overflow-hidden [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]`} {...props}>
       {/* Order Receipt - Fixed Left Position */}
       <AnimatePresence mode="wait">
         {orderDetails && (

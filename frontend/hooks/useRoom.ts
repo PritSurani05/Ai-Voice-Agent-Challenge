@@ -172,12 +172,14 @@ export function useRoom(appConfig: AppConfig) {
               'X-Sandbox-Id': appConfig.sandboxId ?? '',
             },
             body: JSON.stringify({
+              // For local dev, request agent with empty name - agent worker will auto-join
+              // For cloud/sandbox, use the specific agentName
               room_config: appConfig.agentName
                 ? {
                     agents: [{ agent_name: appConfig.agentName }],
                   }
                 : {
-                    agents: [{ agent_name: "" }], // Request agent with empty name for local dev
+                    agents: [{ agent_name: "" }], // Empty name for local dev - any agent can join
                   },
             }),
           });

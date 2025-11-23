@@ -89,22 +89,14 @@ export function AgentControlBar({
   const room = useRoomContext();
   const roomConnected = room?.state === 'connected';
   
-  // Debug logging for agent detection
+  // Debug logging for agent detection (reduced frequency to avoid performance issues)
   useEffect(() => {
-    if (isSessionActive) {
+    if (isSessionActive && Math.random() < 0.1) { // Only log 10% of the time
       console.log('Agent detection:', {
         roomState: room?.state,
         roomConnected,
         participantsCount: participants.length,
-        participants: participants.map(p => ({
-          identity: p.identity,
-          name: p.name,
-          isAgent: p.isAgent,
-          sid: p.sid,
-        })),
         isAgentAvailable,
-        // Allow chat if room is connected even if agent isn't detected yet
-        allowChat: isAgentAvailable || roomConnected,
       });
     }
   }, [participants, isAgentAvailable, isSessionActive, roomConnected, room]);

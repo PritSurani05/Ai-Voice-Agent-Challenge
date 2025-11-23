@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'motion/react';
-import { useVoiceAssistant } from '@livekit/components-react';
+import { useVoiceAssistant, useRoomContext, useRemoteParticipants } from '@livekit/components-react';
 import { cn } from '@/lib/utils';
 
 interface WaveVisualizerProps {
@@ -10,10 +10,22 @@ interface WaveVisualizerProps {
 
 export function WaveVisualizer({ className }: WaveVisualizerProps) {
   let agentState: 'idle' | 'listening' | 'speaking' | 'connecting' = 'idle';
+  const room = useRoomContext();
+  const participants = useRemoteParticipants();
+  const isAgentAvailable = participants.some((p) => p.isAgent);
+  const roomConnected = room?.state === 'connected';
   
   try {
     const voiceAssistant = useVoiceAssistant();
-    agentState = voiceAssistant?.state || 'idle';
+    const rawState = voiceAssistant?.state || 'idle';
+    
+    // If room is connected but no agent is available, don't show "connecting" state
+    // Show "idle" instead to indicate waiting for agent
+    if (rawState === 'connecting' && roomConnected && !isAgentAvailable) {
+      agentState = 'idle';
+    } else {
+      agentState = rawState;
+    }
   } catch (error) {
     // Fallback if hook fails - always show idle animation
     agentState = 'idle';
@@ -24,9 +36,9 @@ export function WaveVisualizer({ className }: WaveVisualizerProps) {
 
   const bars = Array.from({ length: 6 }, (_, i) => i);
   
-  // Debug: Log to ensure component is rendering
-  if (typeof window !== 'undefined') {
-    console.log('WaveVisualizer rendering, state:', agentState);
+  // Debug: Log to ensure component is rendering (reduced frequency)
+  if (typeof window !== 'undefined' && Math.random() < 0.01) {
+    console.log('WaveVisualizer rendering, state:', agentState, 'agentAvailable:', isAgentAvailable);
   }
 
   return (

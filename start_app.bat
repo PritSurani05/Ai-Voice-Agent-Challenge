@@ -1,5 +1,21 @@
 @echo off
 REM Start all services for Windows
+REM Usage: start_app.bat [day]
+REM   day: 1, 2, or 3 (defaults to 2 if not specified)
+
+REM Get day parameter (default to 2)
+set AGENT_DAY=%1
+if "%AGENT_DAY%"=="" set AGENT_DAY=2
+
+REM Validate day parameter
+if not "%AGENT_DAY%"=="1" if not "%AGENT_DAY%"=="2" if not "%AGENT_DAY%"=="3" (
+    echo Invalid day parameter: %AGENT_DAY%
+    echo Usage: start_app.bat [1^|2^|3]
+    echo Defaulting to Day 2...
+    set AGENT_DAY=2
+)
+
+echo Starting services for Day %AGENT_DAY% agent...
 
 REM Source uv environment if available
 if exist "%USERPROFILE%\.local\bin\uv.exe" (
@@ -31,18 +47,19 @@ start "LiveKit Server" cmd /k livekit-server --dev
 
 timeout /t 2 /nobreak >nul
 
-echo Starting backend agent...
-start "Backend Agent" cmd /k "cd backend && uv run python src/agent.py dev"
+echo Starting backend agent (Day %AGENT_DAY%)...
+start "Backend Agent" cmd /k "cd backend && set AGENT_DAY=%AGENT_DAY% && uv run python src/agent.py dev"
 
 timeout /t 2 /nobreak >nul
 
 echo Starting frontend...
-start "Frontend" cmd /k "cd frontend && pnpm dev"
+start "Frontend" cmd /k "cd frontend && set NEXT_PUBLIC_AGENT_DAY=%AGENT_DAY% && pnpm dev"
 
 echo.
 echo All services started in separate windows!
 echo   - LiveKit server: http://localhost:7880
 echo   - Frontend: http://localhost:3000
+echo   - Agent Day: %AGENT_DAY%
 echo.
 echo Close the windows to stop the services
 pause

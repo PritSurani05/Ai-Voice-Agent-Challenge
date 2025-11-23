@@ -12,10 +12,13 @@ interface AppProps {
 }
 
 export function App({ appConfig }: AppProps) {
+  const agentDay = process.env.NEXT_PUBLIC_AGENT_DAY || '2';
+  const gradientClass = agentDay === '3' ? 'apollo-gradient' : 'zepto-gradient';
+  
   return (
     <ErrorBoundary>
       <SessionProvider appConfig={appConfig}>
-        <main className="zepto-gradient min-h-screen w-full overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+        <main className={`${gradientClass} min-h-screen w-full overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]`}>
           <ViewController />
         </main>
         <StartAudio label="Start Audio" />

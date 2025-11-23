@@ -1,0 +1,68 @@
+[
+  {
+    "date_time": "2025-11-24T00:04:10.324776",
+    "mood": "little low",
+    "energy_level": "average",
+    "objectives": [
+      "Finishing my assignment",
+      "Relieving from works",
+      "Have a trip with friends"
+    ],
+    "summary": "Apollo Pharmacy wellness check-in: User is little low with average energy. Focused on: Finishing my assignment, Relieving from works, Have a trip with friends.",
+    "session_id": null
+  },
+  {
+    "date_time": "2025-11-24T00:04:10.324776",
+    "mood": "little low",
+    "energy_level": "average",
+    "objectives": [
+      "Finishing my assignment",
+      "Relieving from works",
+      "Have a trip with friends"
+    ],
+    "summary": "Apollo Pharmacy wellness check-in: User is little low with average energy. Focused on: Finishing my assignment, Relieving from works, Have a trip with friends.",
+    "session_id": null
+  },
+  {
+    "date_time": "2025-11-24T00:11:35.642296",
+    "mood": "better than yesterday",
+    "energy_level": "little above average",
+    "objectives": [
+      "plan a trip to take a break from work"
+    ],
+    "summary": "Apollo Pharmacy wellness check-in: User is better than yesterday with little above average energy. Focused on: plan a trip to take a break from work.",
+    "session_id": null
+  },
+  {
+    "date_time": "2025-11-24T00:11:35.642296",
+    "mood": "better than yesterday",
+    "energy_level": "little above average",
+    "objectives": [
+      "plan a trip to take a break from work"
+    ],
+    "summary": "Apollo Pharmacy wellness check-in: User is better than yesterday with little above average energy. Focused on: plan a trip to take a break from work.",
+    "session_id": null
+  },
+  {
+    "date_time": "2025-11-24T00:11:35.642296",
+    "mood": "better than yesterday",
+    "energy_level": "little above average",
+    "objectives": [
+      "plan a trip to take a break from work"
+    ],
+    "summary": "Apollo Pharmacy wellness check-in: User is better than yesterday with little above average energy. Focused on: plan a trip to take a break from work.",
+    "session_id": null
+  },
+  {
+    "date_time": "2025-11-24T00:18:49.408397",
+    "mood": "perfectly fine",
+    "energy_level": "pretty regular",
+    "objectives": [
+      "take a short walk",
+      "Along with that",
+      "stay hydrated during travel"
+    ],
+    "summary": "Apollo Pharmacy wellness check-in: User is perfectly fine with pretty regular energy. Focused on: take a short walk, Along with that, stay hydrated during travel.",
+    "session_id": null
+  }
+]

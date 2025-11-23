@@ -44,7 +44,9 @@ export async function POST(req: Request) {
 
     // Parse agent configuration from request body
     const body = await req.json();
-    const agentName: string = body?.room_config?.agents?.[0]?.agent_name;
+    const agentName: string | undefined = body?.room_config?.agents?.[0]?.agent_name;
+    // Use agentName as-is (empty string is valid for local dev)
+    const effectiveAgentName = agentName;
 
     // Generate participant token
     const participantName = 'user';
@@ -54,7 +56,7 @@ export async function POST(req: Request) {
     const participantToken = await createParticipantToken(
       { identity: participantIdentity, name: participantName },
       roomName,
-      agentName
+      effectiveAgentName
     );
 
     // Return connection details

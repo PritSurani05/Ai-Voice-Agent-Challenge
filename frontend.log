@@ -1,0 +1,28 @@
+
+> agent-starter-react@0.1.0 dev C:\voice AI Challenge\ten-days-of-voice-agents-2025\frontend
+> next dev --turbopack -H 0.0.0.0
+
+   ▲ Next.js 15.5.2 (Turbopack)
+   - Local:        http://localhost:3000
+   - Network:      http://0.0.0.0:3000
+   - Environments: .env.local
+
+ ✓ Starting...
+ ✓ Ready in 6.6s
+ ○ Compiling / ...
+ ✓ Compiled / in 15.9s
+ GET / 200 in 19720ms
+ ○ Compiling /favicon.ico ...
+ ✓ Compiled /favicon.ico in 1474ms
+ GET /favicon.ico?favicon.ce48eca7.ico 200 in 2365ms
+ ○ Compiling /api/connection-details ...
+ ✓ Compiled /api/connection-details in 762ms
+ POST /api/connection-details 200 in 1277ms
+ GET / 200 in 664ms
+ GET /favicon.ico?favicon.ce48eca7.ico 200 in 475ms
+ POST /api/connection-details 200 in 401ms
+ POST /api/connection-details 200 in 419ms
+ GET / 200 in 713ms
+ GET / 200 in 907ms
+ GET /favicon.ico?favicon.ce48eca7.ico 200 in 499ms
+ ELIFECYCLE  Command failed with exit code 3221225786.
