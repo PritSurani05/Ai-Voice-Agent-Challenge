@@ -32,18 +32,21 @@ LEARNING_MODES = ("learn", "quiz", "teach_back")
 VOICE_PERSONAS = {
     "learn": {
         "voice": "en-US-matthew",
+        "style": "Conversation",
         "display": "Matthew",
-        "style": "calm, encouraging explanations",
+        "tone": "calm, encouraging explanations",
     },
     "quiz": {
         "voice": "en-US-alicia",
+        "style": "Conversation",
         "display": "Alicia",
-        "style": "energetic quiz master",
+        "tone": "energetic quiz master",
     },
     "teach_back": {
         "voice": "en-US-ken",
+        "style": "Conversation",
         "display": "Ken",
-        "style": "supportive coach who listens closely",
+        "tone": "supportive coach who listens closely",
     },
 }
 
@@ -174,6 +177,27 @@ You have access to function tools for managing modes, content, and mastery. Use 
         except KeyError as exc:
             raise ToolError(str(exc)) from exc
 
+    def _apply_voice_persona(self, ctx: RunContext[Userdata], mode: str) -> None:
+        persona = VOICE_PERSONAS[mode]
+        tts_engine = ctx.session.tts
+        if not tts_engine:
+            logger.warning("Cannot switch voices: session has no TTS engine configured.")
+            return
+
+        update_cb = getattr(tts_engine, "update_options", None)
+        if not callable(update_cb):
+            logger.warning(
+                "TTS engine %s does not support dynamic voice switching.",
+                getattr(tts_engine, "provider", "unknown"),
+            )
+            return
+
+        try:
+            update_cb(voice=persona["voice"], style=persona["style"])
+            logger.info("Switched Murf voice to %s for %s mode.", persona["display"], mode)
+        except Exception as exc:  # pragma: no cover - defensive logging
+            logger.error("Failed to update TTS voice for mode %s: %s", mode, exc)
+
     @function_tool
     async def list_concepts(self, ctx: RunContext[Userdata]) -> str:
         """List available concepts with their IDs and titles so the learner can choose."""
@@ -223,9 +247,10 @@ You have access to function tools for managing modes, content, and mastery. Use 
             )
         ctx.userdata.state.current_mode = normalized
         persona = VOICE_PERSONAS[normalized]
+        self._apply_voice_persona(ctx, normalized)
         return (
-            f"Switched to {normalized} mode. Adopt Murf Falcon voice {persona['display']} "
-            f"({persona['style']}). Let the learner know the new vibe and continue."
+            f"Switched to {normalized} mode. Murf Falcon voice {persona['display']} is now live "
+            f"({persona['tone']}). Let the learner know the new vibe and continue."
         )
 
     @function_tool
@@ -314,7 +339,7 @@ async def entrypoint(ctx: JobContext):
         llm=google.LLM(model="gemini-2.5-flash"),
         tts=murf.TTS(
             voice=VOICE_PERSONAS["learn"]["voice"],
-            style="Conversation",
+            style=VOICE_PERSONAS["learn"]["style"],
             tokenizer=tokenize.basic.WordTokenizer(),
             text_pacing=False,
         ),
