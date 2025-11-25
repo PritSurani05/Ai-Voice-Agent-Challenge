@@ -3,6 +3,7 @@
 import { CoffeeWelcomeView } from './coffee-welcome';
 import { WellnessWelcomeView } from './wellness-welcome';
 import { TeacherWelcomeView } from './teacher-welcome';
+import { RazorpayWelcomeView } from './razorpay-welcome';
 
 interface WelcomeViewProps {
   startButtonText: string;
@@ -19,6 +20,9 @@ export function WelcomeView(props: React.ComponentProps<'div'> & WelcomeViewProp
   }
   if (agentDay === '4') {
     return <TeacherWelcomeView {...props} />;
+  }
+  if (agentDay === '5') {
+    return <RazorpayWelcomeView {...props} />;
   }
   return <CoffeeWelcomeView {...props} />;
 }

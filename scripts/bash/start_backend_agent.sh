@@ -5,9 +5,9 @@
 AGENT_DAY=${1:-2}
 
 # Validate day parameter
-if [ "$AGENT_DAY" != "1" ] && [ "$AGENT_DAY" != "2" ] && [ "$AGENT_DAY" != "3" ]; then
+if [ "$AGENT_DAY" != "1" ] && [ "$AGENT_DAY" != "2" ] && [ "$AGENT_DAY" != "3" ] && [ "$AGENT_DAY" != "4" ] && [ "$AGENT_DAY" != "5" ]; then
     echo "Invalid day parameter: $AGENT_DAY"
-    echo "Usage: ./start_backend_agent.sh [1|2|3]"
+    echo "Usage: ./start_backend_agent.sh [1|2|3|4|5]"
     echo "Defaulting to Day 2..."
     AGENT_DAY=2
 fi

@@ -71,6 +71,15 @@ def prewarm(proc: JobProcess):
         except ImportError:
             from agent_day4 import prewarm as day4_prewarm
         day4_prewarm(proc, silero)
+    elif AGENT_DAY == "5":
+        log_msg = "Loading Day 5 Agent..."
+        logger.info(log_msg)
+        print(f"🔵 {log_msg}")
+        try:
+            from .agent_day5 import prewarm as day5_prewarm
+        except ImportError:
+            from agent_day5 import prewarm as day5_prewarm
+        day5_prewarm(proc, silero)
     else:
         logger.warning(f"Unknown AGENT_DAY={AGENT_DAY}, defaulting to Day 2")
         try:
@@ -118,6 +127,15 @@ async def entrypoint(ctx: JobContext):
         except ImportError:
             from agent_day4 import entrypoint as day4_entrypoint
         await day4_entrypoint(ctx)
+    elif AGENT_DAY == "5":
+        log_msg = "Starting Day 5 Agent..."
+        logger.info(log_msg)
+        print(f"🔵 {log_msg}")
+        try:
+            from .agent_day5 import entrypoint as day5_entrypoint
+        except ImportError:
+            from agent_day5 import entrypoint as day5_entrypoint
+        await day5_entrypoint(ctx)
     else:
         logger.warning(f"Unknown AGENT_DAY={AGENT_DAY}, defaulting to Day 2")
         try:

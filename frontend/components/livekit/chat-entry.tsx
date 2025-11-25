@@ -33,34 +33,36 @@ export const ChatEntry = ({
     <li
       title={title}
       data-lk-message-origin={messageOrigin}
-      className={cn('group flex w-full flex-col gap-0.5', className)}
+      className={cn('group flex w-full flex-col gap-1 mb-3', className)}
       style={{ opacity: 1, visibility: 'visible' }}
       {...props}
     >
       <header
         className={cn(
-          'text-muted-foreground flex items-center gap-2 text-sm',
+          'text-muted-foreground flex items-center gap-2 text-base md:text-lg',
           messageOrigin === 'local' ? 'flex-row-reverse' : 'text-left'
         )}
       >
-        {name && <strong>{name}</strong>}
-        <span className="font-mono text-xs opacity-0 transition-opacity ease-linear group-hover:opacity-100">
+        {name && <strong className="font-semibold">{name}</strong>}
+        <span className="font-mono text-sm md:text-base opacity-70 transition-opacity ease-linear group-hover:opacity-100">
           {hasBeenEdited && '*'}
           {time.toLocaleTimeString(locale, { timeStyle: 'short' })}
         </span>
       </header>
       <span
         className={cn(
-          'max-w-4/5 rounded-[20px]',
+          'max-w-xs md:max-w-sm rounded-[20px] text-lg md:text-xl font-medium tracking-wide',
           messageOrigin === 'local' 
-            ? 'ml-auto p-2' 
-            : 'mr-auto p-2'
+            ? 'ml-auto p-3' 
+            : 'mr-auto p-3'
         )}
         style={{ 
           color: '#faf5ff',
           opacity: 1,
           visibility: 'visible',
           display: 'block',
+          fontFamily: 'var(--font-sans), ui-sans-serif, system-ui, sans-serif',
+          letterSpacing: '0.025em',
           backgroundColor: messageOrigin === 'local' 
             ? 'rgba(139, 92, 246, 0.25)' // Purple tint for user messages
             : 'rgba(167, 139, 250, 0.2)', // Lighter purple for agent messages

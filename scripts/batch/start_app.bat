@@ -1,16 +1,16 @@
 @echo off
 REM Start all services for Windows
 REM Usage: start_app.bat [day]
-REM   day: 1, 2, or 3 (defaults to 2 if not specified)
+REM   day: 1, 2, 3, 4, or 5 (defaults to 2 if not specified)
 
 REM Get day parameter (default to 2)
 set AGENT_DAY=%1
 if "%AGENT_DAY%"=="" set AGENT_DAY=2
 
 REM Validate day parameter
-if not "%AGENT_DAY%"=="1" if not "%AGENT_DAY%"=="2" if not "%AGENT_DAY%"=="3" (
+if not "%AGENT_DAY%"=="1" if not "%AGENT_DAY%"=="2" if not "%AGENT_DAY%"=="3" if not "%AGENT_DAY%"=="4" if not "%AGENT_DAY%"=="5" (
     echo Invalid day parameter: %AGENT_DAY%
-    echo Usage: start_app.bat [1^|2^|3]
+    echo Usage: start_app.bat [1^|2^|3^|4^|5]
     echo Defaulting to Day 2...
     set AGENT_DAY=2
 )

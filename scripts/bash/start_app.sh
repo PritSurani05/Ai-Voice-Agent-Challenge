@@ -1,15 +1,15 @@
 #!/bin/bash
 
 # Usage: ./start_app.sh [day]
-#   day: 1, 2, or 3 (defaults to 2 if not specified)
+#   day: 1, 2, 3, 4, or 5 (defaults to 2 if not specified)
 
 # Get day parameter (default to 2)
 AGENT_DAY=${1:-2}
 
 # Validate day parameter
-if [ "$AGENT_DAY" != "1" ] && [ "$AGENT_DAY" != "2" ] && [ "$AGENT_DAY" != "3" ]; then
+if [ "$AGENT_DAY" != "1" ] && [ "$AGENT_DAY" != "2" ] && [ "$AGENT_DAY" != "3" ] && [ "$AGENT_DAY" != "4" ] && [ "$AGENT_DAY" != "5" ]; then
     echo "Invalid day parameter: $AGENT_DAY"
-    echo "Usage: ./start_app.sh [1|2|3]"
+    echo "Usage: ./start_app.sh [1|2|3|4|5]"
     echo "Defaulting to Day 2..."
     AGENT_DAY=2
 fi

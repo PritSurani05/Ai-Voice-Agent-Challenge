@@ -30,6 +30,17 @@ This starter app is compatible with any [custom web/mobile frontend](https://doc
 
 To run the Day 4 active recall coach, set `AGENT_DAY=4` in your environment before starting the backend. The agent loads its study material from `shared-data/day4_tutor_content.json`. You can override this path by setting `DAY4_TUTOR_CONTENT_PATH=/absolute/path/to/your_content.json`. The JSON file should include `id`, `title`, `summary`, `sample_question`, and `teach_back_prompt` for each concept so the agent can drive the learn/quiz/teach-back flow.
 
+## Day 5 Razorpay SDR agent
+
+Set `AGENT_DAY=5` to launch the Razorpay Sales Development Representative. The agent:
+
+- Loads FAQ + pricing info from `shared-data/day5_razorpay_faq.json`
+- Captures lead fields (name, company, email, role, use case, team size, timeline, budget)
+- Stores progressive snapshots plus finalized JSON copies under `backend/leads/day5`
+- Surfaces an end-of-call summary that the frontend renders as a live lead card
+
+You can replace the FAQ source by pointing `DAY5_FAQ_PATH` to another JSON payload with the same schema.
+
 ## Coding agents and MCP
 
 This project is designed to work with coding agents like [Cursor](https://www.cursor.com/) and [Claude Code](https://www.anthropic.com/claude-code).

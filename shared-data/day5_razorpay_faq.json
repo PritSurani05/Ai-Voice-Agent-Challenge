@@ -1,0 +1,139 @@
+{
+  "company": {
+    "name": "Razorpay",
+    "tagline": "India's leading full-stack financial solutions company",
+    "overview": "Razorpay helps Indian businesses accept, process, and disburse payments through a single stack covering cards, UPI, netbanking, wallets, and payouts."
+  },
+  "pricing": {
+    "domestic": "2% per transaction for Indian consumer credit/debit cards, Netbanking, and UPI.",
+    "international": "3% per transaction for international cards and EMI.",
+    "setup_fee": "₹0 setup fee.",
+    "maintenance": "₹0 annual maintenance.",
+    "hidden_charges": "No hidden charges on the standard plan.",
+    "enterprise": "Custom pricing for high-volume merchants (typically processing more than ₹50 Lakhs per month)."
+  },
+  "required_documents": [
+    "PAN card details",
+    "GSTIN (if registered)",
+    "Active bank account details",
+    "Business registration proof"
+  ],
+  "entries": [
+    {
+      "id": "overview",
+      "title": "What Razorpay does",
+      "content": "Razorpay is India's leading full-stack financial solutions company. It helps businesses accept, process, and disburse payments across Credit/Debit cards, UPI, Netbanking, and Wallets with a single integration.",
+      "keywords": ["overview", "what", "company", "razorpay", "product", "platform"]
+    },
+    {
+      "id": "payment_gateway",
+      "title": "Payment Gateway",
+      "content": "Razorpay Payment Gateway lets you securely accept online payments on your website or app with 100+ payment modes and an optimized checkout. It is PCI DSS compliant and supports saved cards, instant refunds, and subscription billing.",
+      "keywords": ["payment", "gateway", "online", "checkout", "accept", "website", "app"]
+    },
+    {
+      "id": "payment_links",
+      "title": "Payment Links",
+      "content": "Payment Links help you get paid instantly without a website. You can generate a link and share it via SMS, Email, or WhatsApp. Customers open the link and pay through any major Indian payment method.",
+      "keywords": ["payment", "links", "no website", "sms", "whatsapp", "email", "instant"]
+    },
+    {
+      "id": "razorpayx",
+      "title": "RazorpayX Business Banking",
+      "content": "RazorpayX is a supercharged current account that combines payroll, vendor payments, and analytics. Automate payouts, reconcile collections, and get working capital insights in one dashboard.",
+      "keywords": ["razorpayx", "banking", "current account", "payouts", "business", "finance"]
+    },
+    {
+      "id": "payroll",
+      "title": "Payroll and compliance",
+      "content": "Razorpay Payroll automates salaries, taxes, contractor payouts, and compliance filings. It also handles TDS, PF, ESI, and integrates with RazorpayX for one-click disbursals.",
+      "keywords": ["payroll", "salary", "compliance", "contractor", "tds", "pf", "esi"]
+    },
+    {
+      "id": "smart_collect",
+      "title": "Smart Collect virtual accounts",
+      "content": "Smart Collect gives you virtual accounts and UPI IDs so every incoming payment is auto-reconciled to the right customer. Ideal for NBFCs, edtech, SaaS, and marketplaces handling large volumes.",
+      "keywords": ["smart collect", "virtual account", "reconciliation", "auto", "incoming", "upi"]
+    },
+    {
+      "id": "pricing_standard",
+      "title": "Standard plan pricing",
+      "content": "Domestic transactions are charged at 2% per successful payment (covers Indian cards, UPI, Netbanking). International cards and EMI charges are 3%. There are zero setup fees, zero annual maintenance, and no hidden charges.",
+      "keywords": ["pricing", "cost", "fee", "domestic", "international", "setup", "maintenance"]
+    },
+    {
+      "id": "pricing_enterprise",
+      "title": "Enterprise plan",
+      "content": "Businesses processing more than ₹50 Lakhs per month can get a custom enterprise plan. The team benchmarks your volumes, risk, and product mix to tailor pricing.",
+      "keywords": ["enterprise", "custom", "pricing", "high volume", "50 lakhs"]
+    },
+    {
+      "id": "activation",
+      "title": "Account activation timeline",
+      "content": "Once you submit valid KYC documents (PAN, GSTIN, bank account, business proof), activation usually takes 24–48 hours. You can start test mode instantly and go live after approval.",
+      "keywords": ["activation", "time", "kyc", "documents", "approval", "24", "48", "hours"]
+    },
+    {
+      "id": "international",
+      "title": "International payments",
+      "content": "Razorpay supports international cards and EMI with a 3% fee. You can price in INR or accept international currencies via payment pages or the API once forex is enabled on your account.",
+      "keywords": ["international", "cards", "emi", "forex", "global", "payments"]
+    },
+    {
+      "id": "free_plan",
+      "title": "Is there a free plan?",
+      "content": "There is no traditional free plan, but there are zero setup or maintenance fees. You only pay the per-transaction fee (2–3%) when you actually collect money.",
+      "keywords": ["free", "plan", "cost", "setup", "maintenance", "fee"]
+    },
+    {
+      "id": "documents",
+      "title": "Required documents",
+      "content": "To activate payouts you need a PAN card, GSTIN (if registered), bank account details, and business registration proof (partnership deed, incorporation certificate, etc.).",
+      "keywords": ["documents", "required", "kyc", "gstin", "pan", "bank", "registration"]
+    },
+    {
+      "id": "startup_program",
+      "title": "Support for startups",
+      "content": "Razorpay Rize is a startup program that offers credits, mentorship, and curated perks to help early-stage founders scale payments and banking faster.",
+      "keywords": ["startup", "rize", "program", "support", "founder", "credits"]
+    },
+    {
+      "id": "target_customers",
+      "title": "Who is this for?",
+      "content": "Razorpay is designed for Indian businesses of all sizes - from startups and SMEs to large enterprises. It's ideal for e-commerce platforms, SaaS companies, marketplaces, edtech, fintech, NBFCs, and any business that needs to accept online payments or manage payouts. Whether you're a solo founder or processing crores monthly, Razorpay scales with you.",
+      "keywords": ["who", "target", "customers", "for", "businesses", "startups", "enterprises", "sme"]
+    },
+    {
+      "id": "getting_started",
+      "title": "How to get started",
+      "content": "Getting started is simple. Visit razorpay.com and sign up with your business email. You'll need to provide basic business details and upload KYC documents (PAN, GSTIN if applicable, bank account, and business registration). Once approved in 24-48 hours, you can integrate using our APIs, plugins, or payment links. Test mode is available instantly for development.",
+      "keywords": ["getting started", "sign up", "register", "onboard", "setup", "begin", "start"]
+    },
+    {
+      "id": "integration",
+      "title": "Integration and technical setup",
+      "content": "Razorpay offers multiple integration options. Developers can use our REST APIs with comprehensive documentation and SDKs for popular languages. We also provide ready-made plugins for WordPress, Shopify, WooCommerce, Magento, and 100+ platforms. For non-technical users, Payment Links require zero coding. All integrations are PCI DSS compliant and support webhooks for real-time notifications.",
+      "keywords": ["integration", "api", "technical", "developer", "code", "sdk", "plugin", "setup"]
+    },
+    {
+      "id": "support",
+      "title": "Customer support",
+      "content": "Razorpay provides 24/7 support via email, phone, and live chat. Enterprise customers get dedicated account managers. We also have extensive documentation, API guides, and a developer community. Support is available in English and Hindi. Response times are typically under 2 hours for critical issues.",
+      "keywords": ["support", "help", "contact", "customer service", "assistance", "helpdesk"]
+    },
+    {
+      "id": "settlement",
+      "title": "Settlement and payouts",
+      "content": "Payments are settled to your linked bank account on a T+1 basis (next business day) for most payment methods. UPI and Netbanking settlements are typically same-day. You can also use RazorpayX for instant payouts and better cash flow management. Settlement reports are available in your dashboard.",
+      "keywords": ["settlement", "payout", "money", "bank", "transfer", "funds", "when", "time"]
+    },
+    {
+      "id": "refunds",
+      "title": "Refunds and chargebacks",
+      "content": "You can process instant refunds directly from your Razorpay dashboard or via API. Refunds are processed back to the original payment method within 5-7 business days. For chargebacks, Razorpay provides dispute management tools and notifications. Standard chargeback fees apply as per card network rules.",
+      "keywords": ["refund", "chargeback", "dispute", "cancel", "return", "money back"]
+    }
+  ]
+}
+
+

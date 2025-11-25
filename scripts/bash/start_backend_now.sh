@@ -22,8 +22,12 @@ if ! command -v uv &> /dev/null; then
     exit 1
 fi
 
-# Set agent day (default to 3 for Day 3 Wellness Agent)
-export AGENT_DAY=${1:-3}
+# Set agent day (default to 5 for Day 5 Razorpay SDR)
+export AGENT_DAY=${1:-5}
+if [ "$AGENT_DAY" != "1" ] && [ "$AGENT_DAY" != "2" ] && [ "$AGENT_DAY" != "3" ] && [ "$AGENT_DAY" != "4" ] && [ "$AGENT_DAY" != "5" ]; then
+    echo "Invalid AGENT_DAY: $AGENT_DAY (use 1, 2, 3, 4, or 5)"
+    exit 1
+fi
 echo "Using AGENT_DAY=$AGENT_DAY"
 echo ""
 

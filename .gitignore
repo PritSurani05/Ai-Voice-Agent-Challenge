@@ -1,2 +1,5 @@
 .cursor/
 logs/
+backend/leads/
+backend/.env.local
+frontend/.env.local
